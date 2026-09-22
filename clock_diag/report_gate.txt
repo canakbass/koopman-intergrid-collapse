@@ -1,0 +1,21 @@
+## Piksel DMD teşhisi (encoder yok, PCA-24; Δt2 artığı < 0.1 ⇒ doğrusal-tutarlı mod var)
+sarkaç (ω0=2.4, genlik 0.3–1.2)    bant içi en iyi ω=+1.994 rad/s  artık=0.175  | mod artıkları=[0.175, 0.043, 0.077, 0.155, 0.114, 0.196]
+sprite (ω=0.764π=2.40 rad/s)       bant içi en iyi ω=+2.400 rad/s  artık=0.000  | mod artıkları=[0.0, 0.001, 0.001, 0.001, 0.002, 0.002]
+
+## Sarkaç (karışık veri; DMD 1500. adımda)
+konfig                       tohum |    train  Δ/2 MSE f_true |  bant ω  artık  kilit?
+kontrol (DMD yok)                0 |  0.00006   0.0055   0.49 |       -      -       -
+kontrol (DMD yok)                1 |  0.00003   0.0054   0.49 |       -      -       -
+kontrol (DMD yok)                2 |  0.00007   0.0055   0.49 |       -      -       -
+kısmi kilit, eşiksiz             0 |  0.00025   0.0090   0.40 |   +2.06  0.111    evet
+kısmi kilit, eşiksiz             1 |  0.00105   0.0105   0.35 |   +2.72  0.602    evet
+kısmi kilit, eşiksiz             2 |  0.00149   0.0094   0.38 |   -3.94  0.328    evet
+kısmi kilit, eşik 0.1            0 |  0.00004   0.0056   0.49 |   +2.06  0.101   iptal
+kısmi kilit, eşik 0.1            1 |  0.00004   0.0054   0.49 |   +2.64  0.678   iptal
+kısmi kilit, eşik 0.1            2 |  0.00009   0.0055   0.49 |   +2.97  0.485   iptal
+
+## Sprite (karışık veri; eşikli mr-DMD, 500. adım) — referans: kontrol Δ/2 0.016–0.047, oracle 1e-4
+     ρ |  Δ/2 MSE 3Δ/7 MSE f_true |                        mod artıkları  kilitlenen modlar           kaldırılan |ω|/π
+   3/8 |   0.0001   0.0001   1.00 |         [0.021, 0.006, 0.048, 0.356]               ✓✓✓·        1.50,0.75,2.25,0.54
+ 0.382 |   0.0001   0.0002   1.00 |          [0.007, 0.04, 0.007, 0.094]               ✓✓✓✓        1.52,0.76,2.29,6.66
+ 1.382 |   0.0001   0.0000   1.00 |         [0.024, 0.011, 0.054, 0.072]               ✓✓✓✓        5.53,2.76,8.30,8.56

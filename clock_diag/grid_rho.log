@@ -1,0 +1,26 @@
+24 iş
+('oracle', 'base', 'small', 0, 0.01, 0.75, 0) OK
+('koop', 'base', 'small', 0, 0.01, 0.75, 0) OK
+('koop', 'base', 'band', 0, 0.01, 0.75, 0) OK
+('koop', 'base', 'small', 0, 0.01, 0.75, 1) OK
+('koopns', 'base', 'band', 0, 0.01, 0.75, 0) OK
+('oracle', 'base', 'small', 0, 0.01, 0.75, 1) OK
+('oracle', 'base', 'small', 0, 0.01, 0.763932, 0) OK
+('koop', 'base', 'band', 0, 0.01, 0.75, 1) OK
+('koopns', 'base', 'band', 0, 0.01, 0.75, 1) OK
+('koop', 'base', 'small', 0, 0.01, 0.763932, 0) OK
+('koop', 'base', 'band', 0, 0.01, 0.763932, 0) OK
+('koopns', 'base', 'band', 0, 0.01, 0.763932, 0) OK
+('koop', 'base', 'small', 0, 0.01, 0.763932, 1) OK
+('koop', 'base', 'band', 0, 0.01, 0.763932, 1) OK
+('oracle', 'base', 'small', 0, 0.01, 0.763932, 1) OK
+('oracle', 'base', 'small', 0, 0.01, 2.763932, 0) OK
+('koop', 'base', 'small', 0, 0.01, 2.763932, 0) OK
+('koopns', 'base', 'band', 0, 0.01, 0.763932, 1) OK
+('koopns', 'base', 'band', 0, 0.01, 2.763932, 0) OK
+('koop', 'base', 'band', 0, 0.01, 2.763932, 0) OK
+('oracle', 'base', 'small', 0, 0.01, 2.763932, 1) HATA 
+('koop', 'base', 'band', 0, 0.01, 2.763932, 1) OK
+('koop', 'base', 'small', 0, 0.01, 2.763932, 1) OK
+('koopns', 'base', 'band', 0, 0.01, 2.763932, 1) OK
+BİTTİ
