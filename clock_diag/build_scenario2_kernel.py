@@ -38,7 +38,7 @@ print("BITTI", flush=True)
 os.makedirs("kaggle_scenario2", exist_ok=True)
 open("kaggle_scenario2/kernel.py", "w").write(kernel)
 meta = {
-    "id": "hcanakbass/clock-scenario2",
+    "id": "anonymous/clock-scenario2",
     "title": "clock-scenario2",
     "code_file": "kernel.py",
     "language": "python",

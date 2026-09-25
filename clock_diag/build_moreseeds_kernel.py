@@ -46,7 +46,7 @@ print("BITTI", flush=True)
 os.makedirs("kaggle_moreseeds", exist_ok=True)
 open("kaggle_moreseeds/kernel.py", "w").write(kernel)
 meta = {
-    "id": "hcanakbass/clock-moreseeds",
+    "id": "anonymous/clock-moreseeds",
     "title": "clock-moreseeds",
     "code_file": "kernel.py",
     "language": "python",
