@@ -1,0 +1,15 @@
+[{"stream_name":"stdout","time":7.606016893,"data":"torch 2.10.0+cu128 cuda True\n"}
+,{"stream_name":"stdout","time":832.443210314,"data":"[  825s] run_pend4.py --arm full --seed 1 --iters 2200 --sampling mr --out pend4_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":857.982588507,"data":"[  850s] run_pend4.py --arm full --seed 2 --iters 2200 --sampling mr --out pend4_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":888.553802891,"data":"[  881s] run_pend4.py --arm full --seed 0 --iters 2200 --sampling mr --out pend4_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":1694.273619386,"data":"[ 1687s] run_pend4.py --arm restricted --seed 0 --iters 2200 --sampling mr --out pend4_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":1699.691885798,"data":"[ 1692s] run_pend4.py --arm restricted --seed 1 --iters 2200 --sampling mr --out pend4_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":1722.732530578,"data":"[ 1715s] run_pend4.py --arm restricted --seed 2 --iters 2200 --sampling mr --out pend4_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":1722.759397657,"data":"BITTI\n"}
+,{"stream_name":"stderr","time":1725.589764866,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1725.589824871,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1725.916550892,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1725.916577217,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1726.669205134,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1728.058688261,"data":"[NbConvertApp] Writing 321631 bytes to __results__.html\n"}
+]

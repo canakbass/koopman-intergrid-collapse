@@ -1,0 +1,22 @@
+[{"stream_name":"stdout","time":6.215160929,"data":"torch 2.10.0+cu128 cuda True\n"}
+,{"stream_name":"stdout","time":10.139565278,"data":"selftest DMD modal: |ω| bulunan=[np.float64(0.05), np.float64(0.3), np.float64(1.9), np.float64(2.3562)] gerçek=[np.float64(0.05), np.float64(0.3), np.float64(1.9), np.float64(2.3562)] modal tabanda tek adım hatası=5.4e-14 cond(P)=117.9 OK\n"}
+,{"stream_name":"stdout","time":10.139602943,"data":"selftest harmonik: ana dal φ/π=[ 0.75 -0.5   0.25 -0.75] -\u003e kaldırılmış |ω|/π=[0.75 1.5  2.25 0.75] (gerçek [0.75 1.5  2.25 0.75]) OK\n"}
+,{"stream_name":"stdout","time":10.139609629,"data":"selftest çok hızlı: ana dal |ω|/π=[0.095 0.25  0.5   0.75 ] -\u003e kaldırılmış [0.095 0.75  1.5   2.25 ] (gerçek [0.095 0.75  1.5   2.25 ]) min marj=0.76 OK\n"}
+,{"stream_name":"stdout","time":10.139614308,"data":"selftest çok hızlı: ana dal |ω|/π=[0.095 0.292 0.472 0.764] -\u003e kaldırılmış [0.095 0.764 1.528 2.292] (gerçek [0.095 0.764 1.528 2.292]) min marj=0.76 OK\n"}
+,{"stream_name":"stdout","time":10.139619021,"data":"selftest kısmi: seçilen |ω|=2.3000 rad/s (gerçek temel 2.3), artık=0.0e+00, ikinci en iyi aday artığı=1.84 OK\n"}
+,{"stream_name":"stdout","time":10.139623896,"data":" \n"}
+,{"stream_name":"stdout","time":828.40040837,"data":"[  818s] run_pend.py --model koop --sampling mr --dmd partial --seed 0 OK\n"}
+,{"stream_name":"stdout","time":862.590977516,"data":"[  852s] run_pend.py --model koop --sampling mr --dmd partial --seed 2 OK\n"}
+,{"stream_name":"stdout","time":881.727170715,"data":"[  872s] run_pend.py --model koop --sampling mr --dmd partial --seed 1 OK\n"}
+,{"stream_name":"stdout","time":1682.842910798,"data":"[ 1673s] run_pend.py --model koop --sampling mr --dmd none --seed 1 OK\n"}
+,{"stream_name":"stdout","time":1718.350824292,"data":"[ 1708s] run_pend.py --model koop --sampling mr --dmd none --seed 0 OK\n"}
+,{"stream_name":"stdout","time":1766.696736327,"data":"[ 1757s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.75 --seed 0 OK\n"}
+,{"stream_name":"stdout","time":1779.208380802,"data":"[ 1769s] run_pend.py --model koop --sampling mr --dmd none --seed 2 OK\n"}
+,{"stream_name":"stdout","time":1794.368513711,"data":"[ 1784s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.763932 --seed 0 OK\n"}
+,{"stream_name":"stderr","time":1796.766822246,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1796.766900117,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1797.004796794,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1797.004833372,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1797.610910849,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1798.77123537,"data":"[NbConvertApp] Writing 343688 bytes to __results__.html\n"}
+]

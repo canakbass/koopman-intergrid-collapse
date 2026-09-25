@@ -1,0 +1,57 @@
+[{"stream_name":"stdout","time":7.854427912,"data":"torch 2.10.0+cu128 cuda True\n"}
+,{"stream_name":"stdout","time":138.627556048,"data":"[  131s] run.py --model oracle --variant base --init small --warmup 0 --lam 0.01 --omega_mult 0.75 --sampling regular --seed 2 OK\n"}
+,{"stream_name":"stdout","time":138.792804926,"data":"[  131s] run.py --model oracle --variant base --init small --warmup 0 --lam 0.01 --omega_mult 0.75 --sampling regular --seed 4 OK\n"}
+,{"stream_name":"stdout","time":138.795655951,"data":"[  131s] run.py --model oracle --variant base --init small --warmup 0 --lam 0.01 --omega_mult 0.75 --sampling regular --seed 3 OK\n"}
+,{"stream_name":"stdout","time":263.738694983,"data":"[  256s] run.py --model koop --variant base --init small --warmup 0 --lam 0.01 --omega_mult 0.75 --sampling regular --seed 2 OK\n"}
+,{"stream_name":"stdout","time":263.895894644,"data":"[  256s] run.py --model koop --variant base --init small --warmup 0 --lam 0.01 --omega_mult 0.75 --sampling regular --seed 3 OK\n"}
+,{"stream_name":"stdout","time":264.15905738,"data":"[  256s] run.py --model oracle --variant base --init small --warmup 0 --lam 0.01 --omega_mult 0.75 --sampling regular --seed 5 OK\n"}
+,{"stream_name":"stdout","time":386.347989728,"data":"[  378s] run.py --model koop --variant base --init small --warmup 0 --lam 0.01 --omega_mult 0.75 --sampling regular --seed 5 OK\n"}
+,{"stream_name":"stdout","time":388.522997894,"data":"[  381s] run.py --model koop --variant base --init small --warmup 0 --lam 0.01 --omega_mult 0.75 --sampling regular --seed 4 OK\n"}
+,{"stream_name":"stdout","time":388.763281676,"data":"[  381s] run.py --model koop --variant base --init band --warmup 0 --lam 0.01 --omega_mult 0.75 --sampling regular --seed 2 OK\n"}
+,{"stream_name":"stdout","time":510.695287509,"data":"[  503s] run.py --model koop --variant base --init band --warmup 0 --lam 0.01 --omega_mult 0.75 --sampling regular --seed 3 OK\n"}
+,{"stream_name":"stdout","time":512.198554295,"data":"[  504s] run.py --model koop --variant base --init band --warmup 0 --lam 0.01 --omega_mult 0.75 --sampling regular --seed 5 OK\n"}
+,{"stream_name":"stdout","time":512.919449718,"data":"[  505s] run.py --model koop --variant base --init band --warmup 0 --lam 0.01 --omega_mult 0.75 --sampling regular --seed 4 OK\n"}
+,{"stream_name":"stdout","time":631.710577525,"data":"[  624s] run.py --model koopns --variant base --init band --warmup 0 --lam 0.01 --omega_mult 0.75 --sampling regular --seed 2 OK\n"}
+,{"stream_name":"stdout","time":635.692057285,"data":"[  628s] run.py --model koopns --variant base --init band --warmup 0 --lam 0.01 --omega_mult 0.75 --sampling regular --seed 3 OK\n"}
+,{"stream_name":"stdout","time":636.12784382,"data":"[  628s] run.py --model koopns --variant base --init band --warmup 0 --lam 0.01 --omega_mult 0.75 --sampling regular --seed 4 OK\n"}
+,{"stream_name":"stdout","time":754.256760117,"data":"[  746s] run.py --model koopns --variant base --init band --warmup 0 --lam 0.01 --omega_mult 0.75 --sampling regular --seed 5 OK\n"}
+,{"stream_name":"stdout","time":758.492758469,"data":"[  751s] run.py --model oracle --variant base --init small --warmup 0 --lam 0.01 --omega_mult 0.763932 --sampling regular --seed 3 OK\n"}
+,{"stream_name":"stdout","time":760.206543997,"data":"[  752s] run.py --model oracle --variant base --init small --warmup 0 --lam 0.01 --omega_mult 0.763932 --sampling regular --seed 2 OK\n"}
+,{"stream_name":"stdout","time":877.838415563,"data":"[  870s] run.py --model oracle --variant base --init small --warmup 0 --lam 0.01 --omega_mult 0.763932 --sampling regular --seed 4 OK\n"}
+,{"stream_name":"stdout","time":882.597880156,"data":"[  875s] run.py --model oracle --variant base --init small --warmup 0 --lam 0.01 --omega_mult 0.763932 --sampling regular --seed 5 OK\n"}
+,{"stream_name":"stdout","time":883.497419145,"data":"[  876s] run.py --model koop --variant base --init small --warmup 0 --lam 0.01 --omega_mult 0.763932 --sampling regular --seed 2 OK\n"}
+,{"stream_name":"stdout","time":997.961280449,"data":"[  990s] run.py --model koop --variant base --init small --warmup 0 --lam 0.01 --omega_mult 0.763932 --sampling regular --seed 3 OK\n"}
+,{"stream_name":"stdout","time":1007.199897305,"data":"[  999s] run.py --model koop --variant base --init small --warmup 0 --lam 0.01 --omega_mult 0.763932 --sampling regular --seed 4 OK\n"}
+,{"stream_name":"stdout","time":1007.568933165,"data":"[ 1000s] run.py --model koop --variant base --init small --warmup 0 --lam 0.01 --omega_mult 0.763932 --sampling regular --seed 5 OK\n"}
+,{"stream_name":"stdout","time":1115.528787215,"data":"[ 1108s] run.py --model koop --variant base --init band --warmup 0 --lam 0.01 --omega_mult 0.763932 --sampling regular --seed 2 OK\n"}
+,{"stream_name":"stdout","time":1130.914939937,"data":"[ 1123s] run.py --model koop --variant base --init band --warmup 0 --lam 0.01 --omega_mult 0.763932 --sampling regular --seed 3 OK\n"}
+,{"stream_name":"stdout","time":1132.609179526,"data":"[ 1125s] run.py --model koop --variant base --init band --warmup 0 --lam 0.01 --omega_mult 0.763932 --sampling regular --seed 4 OK\n"}
+,{"stream_name":"stdout","time":1234.866786075,"data":"[ 1227s] run.py --model koop --variant base --init band --warmup 0 --lam 0.01 --omega_mult 0.763932 --sampling regular --seed 5 OK\n"}
+,{"stream_name":"stdout","time":1255.184828165,"data":"[ 1247s] run.py --model koopns --variant base --init band --warmup 0 --lam 0.01 --omega_mult 0.763932 --sampling regular --seed 3 OK\n"}
+,{"stream_name":"stdout","time":1255.258530751,"data":"[ 1247s] run.py --model koopns --variant base --init band --warmup 0 --lam 0.01 --omega_mult 0.763932 --sampling regular --seed 2 OK\n"}
+,{"stream_name":"stdout","time":1352.588163182,"data":"[ 1345s] run.py --model koopns --variant base --init band --warmup 0 --lam 0.01 --omega_mult 0.763932 --sampling regular --seed 4 OK\n"}
+,{"stream_name":"stdout","time":1378.843799514,"data":"[ 1371s] run.py --model oracle --variant base --init small --warmup 0 --lam 0.01 --omega_mult 2.763932 --sampling regular --seed 2 OK\n"}
+,{"stream_name":"stdout","time":1379.7998895,"data":"[ 1372s] run.py --model koopns --variant base --init band --warmup 0 --lam 0.01 --omega_mult 0.763932 --sampling regular --seed 5 OK\n"}
+,{"stream_name":"stdout","time":1471.092675453,"data":"[ 1463s] run.py --model oracle --variant base --init small --warmup 0 --lam 0.01 --omega_mult 2.763932 --sampling regular --seed 3 OK\n"}
+,{"stream_name":"stdout","time":1502.448803178,"data":"[ 1495s] run.py --model oracle --variant base --init small --warmup 0 --lam 0.01 --omega_mult 2.763932 --sampling regular --seed 4 OK\n"}
+,{"stream_name":"stdout","time":1504.259970726,"data":"[ 1496s] run.py --model oracle --variant base --init small --warmup 0 --lam 0.01 --omega_mult 2.763932 --sampling regular --seed 5 OK\n"}
+,{"stream_name":"stdout","time":1587.451049207,"data":"[ 1580s] run.py --model koop --variant base --init small --warmup 0 --lam 0.01 --omega_mult 2.763932 --sampling regular --seed 2 OK\n"}
+,{"stream_name":"stdout","time":1626.709821886,"data":"[ 1619s] run.py --model koop --variant base --init small --warmup 0 --lam 0.01 --omega_mult 2.763932 --sampling regular --seed 3 OK\n"}
+,{"stream_name":"stdout","time":1627.303608685,"data":"[ 1619s] run.py --model koop --variant base --init small --warmup 0 --lam 0.01 --omega_mult 2.763932 --sampling regular --seed 4 OK\n"}
+,{"stream_name":"stdout","time":1702.703927223,"data":"[ 1695s] run.py --model koop --variant base --init small --warmup 0 --lam 0.01 --omega_mult 2.763932 --sampling regular --seed 5 OK\n"}
+,{"stream_name":"stdout","time":1751.198591347,"data":"[ 1743s] run.py --model koop --variant base --init band --warmup 0 --lam 0.01 --omega_mult 2.763932 --sampling regular --seed 2 OK\n"}
+,{"stream_name":"stdout","time":1752.042587497,"data":"[ 1744s] run.py --model koop --variant base --init band --warmup 0 --lam 0.01 --omega_mult 2.763932 --sampling regular --seed 3 OK\n"}
+,{"stream_name":"stdout","time":1824.219921113,"data":"[ 1816s] run.py --model koop --variant base --init band --warmup 0 --lam 0.01 --omega_mult 2.763932 --sampling regular --seed 4 OK\n"}
+,{"stream_name":"stdout","time":1871.426550743,"data":"[ 1864s] run.py --model koop --variant base --init band --warmup 0 --lam 0.01 --omega_mult 2.763932 --sampling regular --seed 5 OK\n"}
+,{"stream_name":"stdout","time":1874.769631909,"data":"[ 1867s] run.py --model koopns --variant base --init band --warmup 0 --lam 0.01 --omega_mult 2.763932 --sampling regular --seed 2 OK\n"}
+,{"stream_name":"stdout","time":1943.401576603,"data":"[ 1936s] run.py --model koopns --variant base --init band --warmup 0 --lam 0.01 --omega_mult 2.763932 --sampling regular --seed 3 OK\n"}
+,{"stream_name":"stdout","time":1980.276511445,"data":"[ 1972s] run.py --model koopns --variant base --init band --warmup 0 --lam 0.01 --omega_mult 2.763932 --sampling regular --seed 4 OK\n"}
+,{"stream_name":"stdout","time":1981.966970577,"data":"[ 1974s] run.py --model koopns --variant base --init band --warmup 0 --lam 0.01 --omega_mult 2.763932 --sampling regular --seed 5 OK\n"}
+,{"stream_name":"stdout","time":1981.999018989,"data":"BITTI\n"}
+,{"stream_name":"stderr","time":1984.72069134,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1984.720744588,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1985.04015495,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1985.040179567,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1985.768609849,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1987.111156756,"data":"[NbConvertApp] Writing 384267 bytes to __results__.html\n"}
+]

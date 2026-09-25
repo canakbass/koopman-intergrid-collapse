@@ -1,0 +1,19 @@
+[{"stream_name":"stdout","time":5.459562924,"data":"torch 2.10.0+cu128 cuda True\n"}
+,{"stream_name":"stdout","time":9.263864147,"data":"selftest DMD modal: |ω| bulunan=[np.float64(0.05), np.float64(0.3), np.float64(1.9), np.float64(2.3562)] gerçek=[np.float64(0.05), np.float64(0.3), np.float64(1.9), np.float64(2.3562)] modal tabanda tek adım hatası=2.3e-12 cond(P)=144.0 OK\n"}
+,{"stream_name":"stdout","time":9.26390221,"data":"selftest harmonik: ana dal φ/π=[ 0.75 -0.5   0.25 -0.75] -\u003e kaldırılmış |ω|/π=[0.75 1.5  2.25 0.75] (gerçek [0.75 1.5  2.25 0.75]) OK\n"}
+,{"stream_name":"stdout","time":9.263908059,"data":"selftest çok hızlı: ana dal |ω|/π=[0.095 0.25  0.5   0.75 ] -\u003e kaldırılmış [0.095 0.75  1.5   2.25 ] (gerçek [0.095 0.75  1.5   2.25 ]) min marj=0.76 OK\n"}
+,{"stream_name":"stdout","time":9.263912791,"data":"selftest çok hızlı: ana dal |ω|/π=[0.095 0.292 0.472 0.764] -\u003e kaldırılmış [0.095 0.764 1.528 2.292] (gerçek [0.095 0.764 1.528 2.292]) min marj=0.76 OK\n"}
+,{"stream_name":"stdout","time":9.263917215,"data":" \n"}
+,{"stream_name":"stdout","time":841.633411106,"data":"[  832s] run_pend.py --model koop --sampling regular --dmd none --seed 1 OK\n"}
+,{"stream_name":"stdout","time":887.13638604,"data":"[  878s] run_pend.py --model oracleamp --sampling regular --dmd none --seed 1 OK\n"}
+,{"stream_name":"stdout","time":905.246063125,"data":"[  896s] run_pend.py --model oracle --sampling regular --dmd none --seed 1 OK\n"}
+,{"stream_name":"stdout","time":1680.371831997,"data":"[ 1671s] run_pend.py --model koop --sampling mr --dmd mr --seed 1 OK\n"}
+,{"stream_name":"stdout","time":1696.084497227,"data":"[ 1687s] run_pend.py --model koop --sampling mr --dmd none --seed 1 OK\n"}
+,{"stream_name":"stdout","time":1745.552246884,"data":"[ 1736s] run_pend.py --model koopamp --sampling mr --dmd mr --seed 1 OK\n"}
+,{"stream_name":"stderr","time":1747.995781917,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1747.995841224,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1748.222765725,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1748.222796396,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1748.829406866,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1749.963152416,"data":"[NbConvertApp] Writing 337086 bytes to __results__.html\n"}
+]
