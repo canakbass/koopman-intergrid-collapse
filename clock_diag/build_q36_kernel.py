@@ -46,7 +46,7 @@ print("BITTI", flush=True)
 os.makedirs("kaggle_q36", exist_ok=True)
 open("kaggle_q36/kernel.py", "w").write(kernel)
 meta = {
-    "id": "hcanakbass/clock-q36",
+    "id": "anonymous/clock-q36",
     "title": "clock-q36",
     "code_file": "kernel.py",
     "language": "python",
