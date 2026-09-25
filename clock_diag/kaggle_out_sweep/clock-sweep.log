@@ -1,0 +1,30 @@
+[{"stream_name":"stdout","time":6.486888729,"data":"torch 2.10.0+cu128 cuda True\n"}
+,{"stream_name":"stdout","time":171.159975719,"data":"[  165s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.03 --dt2 0.7071067811865476 --seed 1 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":171.396957176,"data":"[  165s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.03 --dt2 0.7071067811865476 --seed 2 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":171.400542915,"data":"[  165s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.0625 --dt2 0.7071067811865476 --seed 0 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":171.402844226,"data":"[  165s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.03 --dt2 0.7071067811865476 --seed 0 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":327.532416416,"data":"[  321s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.0625 --dt2 0.7071067811865476 --seed 1 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":328.344726796,"data":"[  322s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.25 --dt2 0.7071067811865476 --seed 0 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":328.489363811,"data":"[  322s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.0625 --dt2 0.7071067811865476 --seed 2 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":328.66569457,"data":"[  322s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.25 --dt2 0.7071067811865476 --seed 1 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":484.049413695,"data":"[  478s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.25 --dt2 0.7071067811865476 --seed 2 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":485.426044096,"data":"[  479s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.125 --dt2 0.5 --seed 0 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":485.862217319,"data":"[  479s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.125 --dt2 0.5 --seed 2 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":485.960007591,"data":"[  479s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.125 --dt2 0.5 --seed 1 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":641.209618321,"data":"[  635s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.125 --dt2 0.51 --seed 0 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":644.418832134,"data":"[  638s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.125 --dt2 0.51 --seed 1 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":644.876464555,"data":"[  638s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.125 --dt2 0.51 --seed 2 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":645.243579615,"data":"[  639s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.125 --dt2 0.618 --seed 0 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":795.716368833,"data":"[  789s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.125 --dt2 0.618 --seed 1 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":801.824721219,"data":"[  795s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.125 --dt2 0.618 --seed 2 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":802.498055154,"data":"[  796s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.125 --dt2 0.85 --seed 1 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":802.587217099,"data":"[  796s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.125 --dt2 0.85 --seed 0 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":846.092673207,"data":"[  840s] run_sweep.py --omega_mult 0.763932 --mr_frac 0.125 --dt2 0.85 --seed 2 --iters 3000 --dmd_at 500 --out sweep_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":846.11363391,"data":"BITTI\n"}
+,{"stream_name":"stderr","time":848.639448042,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":848.639484439,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":848.902141074,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":848.902170256,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":849.539909705,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":850.818453056,"data":"[NbConvertApp] Writing 359656 bytes to __results__.html\n"}
+]

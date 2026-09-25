@@ -1,0 +1,15 @@
+[{"stream_name":"stdout","time":6.233442872,"data":"torch 2.10.0+cu128 cuda True\n"}
+,{"stream_name":"stdout","time":131.303899912,"data":"[  125s] run_offgrid.py --sampling spot --frac 0.125 --omega_mult 0.763932 --seed 2 --iters 3000 --out offgrid_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":131.472727547,"data":"[  125s] run_offgrid.py --sampling spot --frac 0.125 --omega_mult 0.763932 --seed 0 --iters 3000 --out offgrid_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":131.47303934,"data":"[  125s] run_offgrid.py --sampling spot --frac 0.125 --omega_mult 0.763932 --seed 1 --iters 3000 --out offgrid_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":257.804121012,"data":"[  252s] run_offgrid.py --sampling spot --frac 0.25 --omega_mult 0.763932 --seed 0 --iters 3000 --out offgrid_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":257.87726351,"data":"[  252s] run_offgrid.py --sampling spot --frac 0.25 --omega_mult 0.763932 --seed 2 --iters 3000 --out offgrid_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":258.119162933,"data":"[  252s] run_offgrid.py --sampling spot --frac 0.25 --omega_mult 0.763932 --seed 1 --iters 3000 --out offgrid_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":258.136218423,"data":"BITTI\n"}
+,{"stream_name":"stderr","time":260.496373455,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":260.496438618,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":260.72833253700003,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":260.728366095,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":261.392363157,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":262.540146405,"data":"[NbConvertApp] Writing 343027 bytes to __results__.html\n"}
+]

@@ -1,0 +1,82 @@
+{
+  "full_range": {
+    "residual_by_r": [
+      {
+        "r0_lo": 0.3,
+        "r0_hi": 0.5,
+        "n": 58,
+        "mean_residual": 0.006606718525290489,
+        "mean_true_omega_err": 0.00421507190912962
+      },
+      {
+        "r0_lo": 0.5,
+        "r0_hi": 0.7,
+        "n": 60,
+        "mean_residual": 0.005363679025322199,
+        "mean_true_omega_err": 0.007454876322299242
+      },
+      {
+        "r0_lo": 0.7,
+        "r0_hi": 0.9,
+        "n": 43,
+        "mean_residual": 0.008081946521997452,
+        "mean_true_omega_err": 0.013703539967536926
+      },
+      {
+        "r0_lo": 0.9,
+        "r0_hi": 1.1,
+        "n": 56,
+        "mean_residual": 0.009284564293920994,
+        "mean_true_omega_err": 0.011491185985505581
+      },
+      {
+        "r0_lo": 1.1,
+        "r0_hi": 1.2,
+        "n": 39,
+        "mean_residual": 0.019861845299601555,
+        "mean_true_omega_err": 0.029320167377591133
+      }
+    ],
+    "corr_residual_vs_true_error": 0.8079445958137512
+  },
+  "restricted_0.3_0.7": {
+    "residual_by_r": [
+      {
+        "r0_lo": 0.3,
+        "r0_hi": 0.5,
+        "n": 58,
+        "mean_residual": 0.0009635810274630785,
+        "mean_true_omega_err": 0.0008788807899691164
+      },
+      {
+        "r0_lo": 0.5,
+        "r0_hi": 0.7,
+        "n": 60,
+        "mean_residual": 0.001087923883460462,
+        "mean_true_omega_err": 0.001406550407409668
+      },
+      {
+        "r0_lo": 0.7,
+        "r0_hi": 0.9,
+        "n": 43,
+        "mean_residual": 0.01799812912940979,
+        "mean_true_omega_err": 0.02590135671198368
+      },
+      {
+        "r0_lo": 0.9,
+        "r0_hi": 1.1,
+        "n": 56,
+        "mean_residual": 0.07467759400606155,
+        "mean_true_omega_err": 0.10643254965543747
+      },
+      {
+        "r0_lo": 1.1,
+        "r0_hi": 1.2,
+        "n": 39,
+        "mean_residual": 0.13794003427028656,
+        "mean_true_omega_err": 0.19573277235031128
+      }
+    ],
+    "corr_residual_vs_true_error": 0.9955626130104065
+  }
+}

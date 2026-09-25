@@ -1,0 +1,12 @@
+[{"stream_name":"stdout","time":13.952495523,"data":"torch 2.10.0+cu128 cuda True\n"}
+,{"stream_name":"stdout","time":151.395091325,"data":"[  137s] run_lipschitz.py --omega_mult 0.763932 --seed 0 --iters 3000 --out lipschitz_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":151.53375277,"data":"[  138s] run_lipschitz.py --omega_mult 0.763932 --seed 1 --iters 3000 --out lipschitz_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":151.534240124,"data":"[  138s] run_lipschitz.py --omega_mult 0.763932 --seed 2 --iters 3000 --out lipschitz_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":151.576660051,"data":"BITTI\n"}
+,{"stream_name":"stderr","time":154.659605535,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":154.659662416,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":155.124481717,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":155.124509804,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":155.927395535,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":157.637704738,"data":"[NbConvertApp] Writing 342421 bytes to __results__.html\n"}
+]

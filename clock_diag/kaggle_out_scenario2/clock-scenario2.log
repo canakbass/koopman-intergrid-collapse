@@ -1,0 +1,18 @@
+[{"stream_name":"stdout","time":5.545285639,"data":"torch 2.10.0+cu128 cuda True\n"}
+,{"stream_name":"stdout","time":146.237783242,"data":"[  141s] run2.py --model koop --dmd mr --dmd_at 500 --omega1_mult 0.75 --omega2_mult 0.382 --sampling mr --seed 0 --iters 3000 OK\n"}
+,{"stream_name":"stdout","time":146.358090848,"data":"[  141s] run2.py --model koop --dmd none --omega1_mult 0.75 --omega2_mult 0.382 --sampling mr --seed 0 --iters 3000 OK\n"}
+,{"stream_name":"stdout","time":146.359901111,"data":"[  141s] run2.py --model oracle --omega1_mult 0.75 --omega2_mult 0.382 --sampling regular --seed 0 --iters 3000 OK\n"}
+,{"stream_name":"stdout","time":280.733326552,"data":"[  275s] run2.py --model koop --dmd none --omega1_mult 0.75 --omega2_mult 0.382 --sampling mr --seed 1 --iters 3000 OK\n"}
+,{"stream_name":"stdout","time":283.483095129,"data":"[  278s] run2.py --model oracle --omega1_mult 0.75 --omega2_mult 0.382 --sampling regular --seed 1 --iters 3000 OK\n"}
+,{"stream_name":"stdout","time":284.008735116,"data":"[  278s] run2.py --model koop --dmd mr --dmd_at 500 --omega1_mult 0.75 --omega2_mult 0.382 --sampling mr --seed 1 --iters 3000 OK\n"}
+,{"stream_name":"stdout","time":415.554130836,"data":"[  410s] run2.py --model oracle --omega1_mult 0.75 --omega2_mult 0.382 --sampling regular --seed 2 --iters 3000 OK\n"}
+,{"stream_name":"stdout","time":418.589954053,"data":"[  413s] run2.py --model koop --dmd none --omega1_mult 0.75 --omega2_mult 0.382 --sampling mr --seed 2 --iters 3000 OK\n"}
+,{"stream_name":"stdout","time":419.121906807,"data":"[  414s] run2.py --model koop --dmd mr --dmd_at 500 --omega1_mult 0.75 --omega2_mult 0.382 --sampling mr --seed 2 --iters 3000 OK\n"}
+,{"stream_name":"stdout","time":419.133452648,"data":"BITTI\n"}
+,{"stream_name":"stderr","time":421.496779164,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":421.496835069,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":421.721835987,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":421.721864278,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":422.345463401,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":423.513043817,"data":"[NbConvertApp] Writing 339105 bytes to __results__.html\n"}
+]

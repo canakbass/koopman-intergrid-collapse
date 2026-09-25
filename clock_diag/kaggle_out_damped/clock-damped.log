@@ -1,0 +1,27 @@
+[{"stream_name":"stdout","time":7.299069167,"data":"torch 2.10.0+cu128 cuda True\n"}
+,{"stream_name":"stdout","time":136.313334474,"data":"[  129s] run_damped.py --cfg control --mu 0.08 --seed 2 --iters 3000 --dmd_at 500 --out damped_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":136.460013034,"data":"[  129s] run_damped.py --cfg control --mu 0.08 --seed 1 --iters 3000 --dmd_at 500 --out damped_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":136.468226331,"data":"[  129s] run_damped.py --cfg control --mu 0.08 --seed 0 --iters 3000 --dmd_at 500 --out damped_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":261.701806668,"data":"[  254s] run_damped.py --cfg multirate --mu 0.08 --seed 1 --iters 3000 --dmd_at 500 --out damped_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":262.390718899,"data":"[  255s] run_damped.py --cfg multirate --mu 0.08 --seed 2 --iters 3000 --dmd_at 500 --out damped_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":262.658921611,"data":"[  255s] run_damped.py --cfg multirate --mu 0.08 --seed 0 --iters 3000 --dmd_at 500 --out damped_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":383.661769716,"data":"[  376s] run_damped.py --cfg oracle --mu 0.08 --seed 0 --iters 3000 --dmd_at 500 --out damped_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":387.377104954,"data":"[  380s] run_damped.py --cfg oracle --mu 0.08 --seed 1 --iters 3000 --dmd_at 500 --out damped_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":387.784741616,"data":"[  380s] run_damped.py --cfg oracle --mu 0.08 --seed 2 --iters 3000 --dmd_at 500 --out damped_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":506.286729565,"data":"[  499s] run_damped.py --cfg control --mu -0.08 --seed 0 --iters 3000 --dmd_at 500 --out damped_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":510.747601182,"data":"[  503s] run_damped.py --cfg control --mu -0.08 --seed 1 --iters 3000 --dmd_at 500 --out damped_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":511.587456684,"data":"[  504s] run_damped.py --cfg control --mu -0.08 --seed 2 --iters 3000 --dmd_at 500 --out damped_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":626.757620258,"data":"[  619s] run_damped.py --cfg multirate --mu -0.08 --seed 0 --iters 3000 --dmd_at 500 --out damped_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":634.019948312,"data":"[  627s] run_damped.py --cfg multirate --mu -0.08 --seed 1 --iters 3000 --dmd_at 500 --out damped_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":635.327327756,"data":"[  628s] run_damped.py --cfg multirate --mu -0.08 --seed 2 --iters 3000 --dmd_at 500 --out damped_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":746.014499445,"data":"[  739s] run_damped.py --cfg oracle --mu -0.08 --seed 0 --iters 3000 --dmd_at 500 --out damped_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":755.481819643,"data":"[  748s] run_damped.py --cfg oracle --mu -0.08 --seed 1 --iters 3000 --dmd_at 500 --out damped_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":755.735626593,"data":"[  748s] run_damped.py --cfg oracle --mu -0.08 --seed 2 --iters 3000 --dmd_at 500 --out damped_results.jsonl OK\n"}
+,{"stream_name":"stdout","time":755.759087638,"data":"BITTI\n"}
+,{"stream_name":"stderr","time":758.386144327,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":758.386204383,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":758.696790644,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":758.696818578,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":759.407286044,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":760.714755866,"data":"[NbConvertApp] Writing 338978 bytes to __results__.html\n"}
+]

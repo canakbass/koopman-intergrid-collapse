@@ -1,0 +1,49 @@
+[{"stream_name":"stdout","time":6.921077167,"data":"torch 2.10.0+cu128 cuda True\n"}
+,{"stream_name":"stdout","time":10.884741056,"data":"selftest DMD modal: |ω| bulunan=[np.float64(0.05), np.float64(0.3), np.float64(1.9), np.float64(2.3562)] gerçek=[np.float64(0.05), np.float64(0.3), np.float64(1.9), np.float64(2.3562)] modal tabanda tek adım hatası=2.3e-12 cond(P)=144.0 OK\n"}
+,{"stream_name":"stdout","time":10.88479674,"data":"selftest harmonik: ana dal φ/π=[ 0.75 -0.5   0.25 -0.75] -\u003e kaldırılmış |ω|/π=[0.75 1.5  2.25 0.75] (gerçek [0.75 1.5  2.25 0.75]) OK\n"}
+,{"stream_name":"stdout","time":10.884805394,"data":"selftest çok hızlı: ana dal |ω|/π=[0.095 0.25  0.5   0.75 ] -\u003e kaldırılmış [0.095 0.75  1.5   2.25 ] (gerçek [0.095 0.75  1.5   2.25 ]) min marj=0.76 OK\n"}
+,{"stream_name":"stdout","time":10.884810683,"data":"selftest çok hızlı: ana dal |ω|/π=[0.095 0.292 0.472 0.764] -\u003e kaldırılmış [0.095 0.764 1.528 2.292] (gerçek [0.095 0.764 1.528 2.292]) min marj=0.76 OK\n"}
+,{"stream_name":"stdout","time":10.884815672,"data":" \n"}
+,{"stream_name":"stdout","time":134.112053261,"data":"[  123s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.75 --seed 0 OK\n"}
+,{"stream_name":"stdout","time":134.301679975,"data":"[  123s] run.py --model koop --sampling mr --light --omega_mult 0.75 --seed 1 OK\n"}
+,{"stream_name":"stdout","time":134.306035042,"data":"[  123s] run.py --model koop --sampling mr --light --omega_mult 0.75 --seed 0 OK\n"}
+,{"stream_name":"stdout","time":260.490909777,"data":"[  250s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.75 --seed 1 OK\n"}
+,{"stream_name":"stdout","time":261.265257351,"data":"[  250s] run.py --model koop --sampling mr --light --omega_mult 0.75 --seed 2 OK\n"}
+,{"stream_name":"stdout","time":261.815763873,"data":"[  251s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.75 --seed 2 OK\n"}
+,{"stream_name":"stdout","time":387.615278494,"data":"[  377s] run.py --model koop --sampling mr --light --omega_mult 0.763932 --seed 0 OK\n"}
+,{"stream_name":"stdout","time":388.125549338,"data":"[  377s] run.py --model koop --sampling mr --light --omega_mult 0.763932 --seed 1 OK\n"}
+,{"stream_name":"stdout","time":388.547215609,"data":"[  378s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.763932 --seed 0 OK\n"}
+,{"stream_name":"stdout","time":513.390016732,"data":"[  503s] run.py --model koop --sampling mr --light --omega_mult 0.763932 --seed 2 OK\n"}
+,{"stream_name":"stdout","time":514.6836574,"data":"[  504s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.763932 --seed 1 OK\n"}
+,{"stream_name":"stdout","time":514.942723102,"data":"[  504s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.763932 --seed 2 OK\n"}
+,{"stream_name":"stdout","time":635.617682407,"data":"[  625s] run.py --model koop --sampling mr --light --omega_mult 2.763932 --seed 0 OK\n"}
+,{"stream_name":"stdout","time":640.483954629,"data":"[  630s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 2.763932 --seed 0 OK\n"}
+,{"stream_name":"stdout","time":640.947751548,"data":"[  630s] run.py --model koop --sampling mr --light --omega_mult 2.763932 --seed 1 OK\n"}
+,{"stream_name":"stdout","time":753.999142127,"data":"[  743s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 2.763932 --seed 1 OK\n"}
+,{"stream_name":"stdout","time":766.407517966,"data":"[  756s] run.py --model koop --sampling mr --light --omega_mult 2.763932 --seed 2 OK\n"}
+,{"stream_name":"stdout","time":766.553832631,"data":"[  756s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 2.763932 --seed 2 OK\n"}
+,{"stream_name":"stdout","time":875.600825709,"data":"[  865s] run.py --model koop --sampling mr --light --omega_mult 0.5 --seed 0 OK\n"}
+,{"stream_name":"stdout","time":890.957180011,"data":"[  880s] run.py --model koop --sampling mr --light --omega_mult 0.5 --seed 1 OK\n"}
+,{"stream_name":"stdout","time":891.825486934,"data":"[  881s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.5 --seed 0 OK\n"}
+,{"stream_name":"stdout","time":994.825228296,"data":"[  984s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.5 --seed 1 OK\n"}
+,{"stream_name":"stdout","time":1012.709118918,"data":"[ 1002s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.5 --seed 2 OK\n"}
+,{"stream_name":"stdout","time":1013.039325972,"data":"[ 1002s] run.py --model koop --sampling mr --light --omega_mult 0.5 --seed 2 OK\n"}
+,{"stream_name":"stdout","time":1842.768937501,"data":"[ 1832s] run_pend.py --model koop --sampling regular --dmd none --seed 0 OK\n"}
+,{"stream_name":"stdout","time":1845.86739579,"data":"[ 1835s] run_pend.py --model oracle --sampling regular --dmd none --seed 0 OK\n"}
+,{"stream_name":"stdout","time":1900.875100396,"data":"[ 1890s] run_pend.py --model oracleamp --sampling regular --dmd none --seed 0 OK\n"}
+,{"stream_name":"stdout","time":2654.211450486,"data":"[ 2643s] run_pend.py --model koop --sampling mr --dmd none --seed 0 OK\n"}
+,{"stream_name":"stdout","time":2677.227845229,"data":"[ 2666s] run_pend.py --model koop --sampling mr --dmd mr --seed 0 OK\n"}
+,{"stream_name":"stdout","time":2795.944830746,"data":"[ 2785s] run_pend.py --model koopamp --sampling mr --dmd mr --seed 0 OK\n"}
+,{"stream_name":"stdout","time":3511.664044399,"data":"[ 3501s] run_pend.py --model oracle --sampling regular --dmd none --seed 1 OK\n"}
+,{"stream_name":"stdout","time":3513.499181799,"data":"[ 3503s] run_pend.py --model koop --sampling regular --dmd none --seed 1 OK\n"}
+,{"stream_name":"stdout","time":3676.758379004,"data":"[ 3666s] run_pend.py --model oracleamp --sampling regular --dmd none --seed 1 OK\n"}
+,{"stream_name":"stdout","time":4313.776970939,"data":"[ 4303s] run_pend.py --model koop --sampling mr --dmd mr --seed 1 OK\n"}
+,{"stream_name":"stdout","time":4322.941558674,"data":"[ 4312s] run_pend.py --model koop --sampling mr --dmd none --seed 1 OK\n"}
+,{"stream_name":"stdout","time":4455.107695937,"data":"[ 4444s] run_pend.py --model koopamp --sampling mr --dmd mr --seed 1 OK\n"}
+,{"stream_name":"stderr","time":4457.701499695,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":4457.70159324,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":4458.0024283,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":4458.002479519,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":4458.678994008,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":4459.923995799,"data":"[NbConvertApp] Writing 359121 bytes to __results__.html\n"}
+]

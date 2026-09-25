@@ -1,0 +1,27 @@
+[{"stream_name":"stdout","time":6.015960476,"data":"torch 2.10.0+cu128 cuda True\n"}
+,{"stream_name":"stdout","time":9.792049838,"data":"selftest DMD modal: |ω| bulunan=[np.float64(0.05), np.float64(0.3), np.float64(1.9), np.float64(2.3562)] gerçek=[np.float64(0.05), np.float64(0.3), np.float64(1.9), np.float64(2.3562)] modal tabanda tek adım hatası=5.4e-14 cond(P)=117.9 OK\n"}
+,{"stream_name":"stdout","time":9.792093914,"data":"selftest harmonik: ana dal φ/π=[ 0.75 -0.5   0.25 -0.75] -\u003e kaldırılmış |ω|/π=[0.75 1.5  2.25 0.75] (gerçek [0.75 1.5  2.25 0.75]) OK\n"}
+,{"stream_name":"stdout","time":9.792100368,"data":"selftest çok hızlı: ana dal |ω|/π=[0.095 0.25  0.5   0.75 ] -\u003e kaldırılmış [0.095 0.75  1.5   2.25 ] (gerçek [0.095 0.75  1.5   2.25 ]) min marj=0.76 OK\n"}
+,{"stream_name":"stdout","time":9.792105483,"data":"selftest çok hızlı: ana dal |ω|/π=[0.095 0.292 0.472 0.764] -\u003e kaldırılmış [0.095 0.764 1.528 2.292] (gerçek [0.095 0.764 1.528 2.292]) min marj=0.76 OK\n"}
+,{"stream_name":"stdout","time":9.792112789,"data":"selftest kısmi: seçilen |ω|=2.3000 rad/s (gerçek temel 2.3), artık=0.0e+00, ikinci en iyi aday artığı=1.84 OK\n"}
+,{"stream_name":"stdout","time":9.792120562000001,"data":" \n"}
+,{"stream_name":"stdout","time":16.018678096,"data":"PIKSEL_DMD\n"}
+,{"stream_name":"stdout","time":16.018773286,"data":"{\"case\": \"sarka\\u00e7 (\\u03c90=2.4, genlik 0.3\\u20131.2)\", \"principal\": [1.994, 1.361, 0.946, 2.885, 0.888, 2.431], \"lifted\": [1.994, 26.494, 7.229, 28.018, -24.245, 14.998], \"residual\": [0.175, 0.043, 0.077, 0.155, 0.114, 0.196], \"band_best_omega\": 1.994, \"band_best_residual\": 0.175}\n"}
+,{"stream_name":"stdout","time":16.018798715,"data":"{\"case\": \"sprite (\\u03c9=0.764\\u03c0=2.40 rad/s)\", \"principal\": [2.4, 1.483, 1.483, 0.917, 2.966, 1.833], \"lifted\": [2.4, -4.8, -4.8, 7.2, -9.6, 14.4], \"residual\": [0.0, 0.001, 0.001, 0.001, 0.002, 0.002], \"band_best_omega\": 2.4, \"band_best_residual\": 0.0}\n"}
+,{"stream_name":"stdout","time":16.018805907,"data":" \n"}
+,{"stream_name":"stdout","time":854.840933791,"data":"[  839s] run_pend.py --model koop --sampling mr --dmd partial --dmd_at 1500 --seed 0 OK\n"}
+,{"stream_name":"stdout","time":859.24647582,"data":"[  843s] run_pend.py --model koop --sampling mr --dmd partial --dmd_at 1500 --seed 1 OK\n"}
+,{"stream_name":"stdout","time":886.323802845,"data":"[  870s] run_pend.py --model koop --sampling mr --dmd partial --dmd_at 1500 --seed 2 OK\n"}
+,{"stream_name":"stdout","time":1699.613984418,"data":"[ 1684s] run_pend.py --model koop --sampling mr --dmd partialg --dmd_at 1500 --seed 2 OK\n"}
+,{"stream_name":"stdout","time":1726.106975702,"data":"[ 1710s] run_pend.py --model koop --sampling mr --dmd partialg --dmd_at 1500 --seed 1 OK\n"}
+,{"stream_name":"stdout","time":1727.136993291,"data":"[ 1711s] run_pend.py --model koop --sampling mr --dmd partialg --dmd_at 1500 --seed 0 OK\n"}
+,{"stream_name":"stdout","time":1807.047943357,"data":"[ 1791s] run.py --model koop --sampling mr --dmd mrg --light --omega_mult 0.75 --seed 0 OK\n"}
+,{"stream_name":"stdout","time":1839.877836558,"data":"[ 1824s] run.py --model koop --sampling mr --dmd mrg --light --omega_mult 0.763932 --seed 0 OK\n"}
+,{"stream_name":"stdout","time":1840.24911276,"data":"[ 1824s] run.py --model koop --sampling mr --dmd mrg --light --omega_mult 2.763932 --seed 0 OK\n"}
+,{"stream_name":"stderr","time":1842.595483684,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1842.595568981,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1842.839366659,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1842.839402935,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1843.443695609,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1844.574046305,"data":"[NbConvertApp] Writing 351105 bytes to __results__.html\n"}
+]
