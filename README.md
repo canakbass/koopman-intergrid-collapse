@@ -43,7 +43,7 @@ clock_diag/
                                          diagnostic sweep, q = 3/4/6/8 rotation-number resolution)
     ckpt/*_portrait.npz                 latent trajectory data behind the phase-portrait figures
 
-  Four robustness checks (see NOTES_robustness.md for full results)
+  Robustness and reviewer-response checks
     data_damped.py, run_damped.py       does the fix extend to decaying/growing (non-marginally-stable)
                                          generators? (it does, unmodified -- the lift depends only on
                                          each eigenvalue's argument, never its modulus)
@@ -56,14 +56,19 @@ clock_diag/
                                          rate ratio beta = Delta_2/Delta_1; empirically confirms the
                                          separation bound's predicted degradation near low-denominator
                                          rational beta
-    models_robustness.py                model classes used only by the four checks above (additive
-                                         subclasses of models.py; the original classes are untouched)
-    build_{damped,offgrid,lipschitz,sweep,q36,scenario2,moreseeds,pend4}_kernel.py
-                                         Kaggle kernel packaging scripts used to run the corresponding
+    data_oneobj_wide.py, run_oneobj_wide.py, data_threeobj.py, run3.py
+                                         isolate whether the two-object scene's milder control failure is
+                                         driven by latent capacity, object count, or sampling regime, and
+                                         test a third independent object
+    run_noise.py, run_pend_noise.py     observation-noise sweep for the gate threshold (false-reject on
+                                         rigid rotation, false-accept on the pendulum)
+    models_robustness.py                model classes used only by the checks above (additive subclasses
+                                         of models.py; the original classes are untouched)
+    build_*_kernel.py                   Kaggle kernel packaging scripts used to run the corresponding
                                          experiments on GPU
+    report_reviewer.py                  merges/reports the reviewer-response results above
 
-  Exploratory: toward an amplitude-dependent certificate (NOT part of the core paper's claims;
-  see NOTES_nonlinear.md and PROPOSED_addition.md for the full writeup)
+  Exploratory: toward an amplitude-dependent certificate (NOT part of the core paper's claims)
     synth_amp_test.py, synth_certificate_test.py
                                          synthetic testbed for a richer (Lusch et al.) training loss and
                                          for a per-trajectory, r-dependent local certificate
@@ -89,10 +94,10 @@ python grid.py              # sweep used for the main diagnostics table
 python report.py            # prints the corresponding table from results.jsonl
 ```
 
-The four robustness checks and the exploratory certificate experiments are single-file, self-contained
-scripts with a `--help` flag; each is documented in `NOTES_robustness.md` / `NOTES_nonlinear.md`
-alongside the raw, seed-by-seed results it produced. `kaggle_out_*/` directories hold the recorded
-outputs (results files and logs) from the GPU runs reported in the paper.
+The robustness/reviewer-response checks and the exploratory certificate experiments are single-file,
+self-contained scripts with a `--help` flag. `kaggle_out_*/` directories hold the recorded outputs
+(results files and logs) from the GPU runs reported in the paper; `results*.jsonl` at the top level
+are the corresponding merged/raw result tables.
 
 Requires Python 3, PyTorch, and NumPy (see `requirements.txt`).
 
