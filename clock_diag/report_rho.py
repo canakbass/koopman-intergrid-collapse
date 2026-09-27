@@ -1,8 +1,10 @@
-# Dönme sayısı testi: ρ = ωΔ/2π rasyonel (1/4, 3/8, 5/4) vs irrasyonel (altın, 1+altın)
-import json, math, numpy as np
+# Dönme sayısı testi: ρ = ωΔ/2π rasyonel (1/4, 1/3, 1/6, 5/6, 5/4) vs irrasyonel (altın, 1+altın).
+# Kullanım: python report_rho.py [dosya.jsonl] -- q=3/4/6/8 çözünürlük sonuçları için:
+# python report_rho.py results_merged2.jsonl
+import json, math, sys, numpy as np
 from collections import defaultdict
 PI = math.pi
-R = [json.loads(l) for l in open("results.jsonl")]
+R = [json.loads(l) for l in open(sys.argv[1] if len(sys.argv) > 1 else "results.jsonl")]
 G = defaultdict(list)
 for r in R: G[(r["model"], r["init"], r["variant"], round(r["omega_mult"], 4))].append(r)
 m = lambda rs, k: float(np.mean([r[k] for r in rs]))

@@ -1,4 +1,4 @@
-"""Reviewer-response kernel packager. Mirrors the existing kaggle_*
+"""Kernel packager for the extended-seed/mechanism/noise-sweep checks. Mirrors the existing kaggle_*
 build_*_kernel.py pattern: source files base64-embedded in one kernel.py, jobs run via
 ThreadPoolExecutor(3) on a single T4. Does NOT modify any protected file (data.py,
 models.py, dmd_init.py, losses.py, run.py, run_pend.py, run2.py, data2.py, diagnostics.py);
@@ -90,7 +90,7 @@ OUT_FILES = ["results_t2_moreseeds.jsonl", "results_t3_moreseeds.jsonl", "result
 
 files_b64 = {f: base64.b64encode(open(f, "rb").read()).decode() for f in SRC_FILES}
 
-kernel = f"""# clock-reviewer-response (tek cekirdek): ek tohumlar (Table 2/3/5/6),
+kernel = f"""# clock-extended (tek cekirdek): ek tohumlar (Table 2/3/5/6),
 # tek/iki-nesne kapasite-vs-sahne ayrimi, Neural ODE 5 tohum, gurultu/esik taramasi.
 import base64, os, subprocess, sys, json, time
 from concurrent.futures import ThreadPoolExecutor
@@ -113,11 +113,11 @@ for f in OUT_FILES:
 print("BITTI", flush=True)
 """
 
-os.makedirs("kaggle_reviewer", exist_ok=True)
-open("kaggle_reviewer/kernel.py", "w").write(kernel)
+os.makedirs("kaggle_extended", exist_ok=True)
+open("kaggle_extended/kernel.py", "w").write(kernel)
 meta = {
-    "id": "anonymous/clock-reviewer-response",
-    "title": "clock-reviewer-response",
+    "id": "anonymous/clock-extended",
+    "title": "clock-extended",
     "code_file": "kernel.py",
     "language": "python",
     "kernel_type": "script",
@@ -130,5 +130,5 @@ meta = {
     "competition_sources": [],
     "kernel_sources": [],
 }
-json.dump(meta, open("kaggle_reviewer/kernel-metadata.json", "w"), indent=1)
-print(len(jobs), "is paketlendi -> kaggle_reviewer/")
+json.dump(meta, open("kaggle_extended/kernel-metadata.json", "w"), indent=1)
+print(len(jobs), "is paketlendi -> kaggle_extended/")

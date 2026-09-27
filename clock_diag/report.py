@@ -1,8 +1,9 @@
-# results.jsonl -> 3 tablo (tohum ortalaması). Kullanım: python report.py
-import json, math, numpy as np
+# <results.jsonl> -> 3 tablo (tohum ortalaması). Kullanım: python report.py [dosya.jsonl]
+# Makaledeki Tablo 1 (6 tohum) için: python report.py results_merged2.jsonl
+import json, math, sys, numpy as np
 from collections import defaultdict
 PI = math.pi
-R = [json.loads(l) for l in open("results.jsonl")]
+R = [json.loads(l) for l in open(sys.argv[1] if len(sys.argv) > 1 else "results.jsonl")]
 CFG = [("oracle", "base", "small", 0, "oracle (ω₀=gerçek)"), ("koop", "base", "small", 0, "koop küçük-init"),
        ("koop", "base", "band", 0, "koop band-init"), ("koop", "both", "small", 1000, "koop+kısıt küçük"),
        ("koop", "both", "band", 1000, "koop+kısıt band"), ("koopns", "base", "band", 0, "koop statiksiz band"),

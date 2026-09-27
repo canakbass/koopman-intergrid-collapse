@@ -43,7 +43,8 @@ clock_diag/
                                          diagnostic sweep, q = 3/4/6/8 rotation-number resolution)
     ckpt/*_portrait.npz                 latent trajectory data behind the phase-portrait figures
 
-  Robustness and reviewer-response checks
+  Robustness checks (each isolates one design question; see table below for which
+  paper table/figure each maps to)
     data_damped.py, run_damped.py       does the fix extend to decaying/growing (non-marginally-stable)
                                          generators? (it does, unmodified -- the lift depends only on
                                          each eigenvalue's argument, never its modulus)
@@ -66,7 +67,7 @@ clock_diag/
                                          of models.py; the original classes are untouched)
     build_*_kernel.py                   Kaggle kernel packaging scripts used to run the corresponding
                                          experiments on GPU
-    report_reviewer.py                  merges/reports the reviewer-response results above
+    report_extended.py                  merges/reports the robustness-check results above
 
   Exploratory: toward an amplitude-dependent certificate (NOT part of the core paper's claims)
     synth_amp_test.py, synth_certificate_test.py
@@ -91,13 +92,35 @@ python run.py --help        # single rotating-sprite training run
 python run_pend.py --help   # single pixel-pendulum training run
 python run2.py --help       # single two-independent-object training run
 python grid.py              # sweep used for the main diagnostics table
-python report.py            # prints the corresponding table from results.jsonl
 ```
 
-The robustness/reviewer-response checks and the exploratory certificate experiments are single-file,
-self-contained scripts with a `--help` flag. `kaggle_out_*/` directories hold the recorded outputs
-(results files and logs) from the GPU runs reported in the paper; `results*.jsonl` at the top level
-are the corresponding merged/raw result tables.
+The recorded raw outputs from every run reported in the paper are already checked in, so the
+tables can be reproduced from data alone, without retraining. This is what each paper table
+reads from and which script prints it:
+
+| Paper table/result | Data file(s) | Command |
+|---|---|---|
+| Table 1 (6-seed diagnostic sweep) | `results_merged2.jsonl` | `python report.py results_merged2.jsonl` |
+| ρ=1/4 anomaly + q=3/4/6/8 resolution | `results_merged2.jsonl` (same file; filter `omega_mult` ∈ {0.5, 0.75, 0.7639, 1.6667, 0.6667, 0.3333, 2.5, 2.7639} for ρ ∈ {1/4, 3/8, golden, 5/6, 1/3, 1/6, 5/4, 1+golden}) | `python report_rho.py results_merged2.jsonl` (covers 1/4, 3/8, golden, 5/4; the q=3/6 rows need the same manual filter on the raw file) |
+| Table 2 (single-rate DMD init, 5 seeds) | `kaggle_out/results.jsonl` + `results_t2_moreseeds.jsonl` | `python report_extended.py t2` |
+| Table 3 (multi-rate lifting, 5 seeds) | `kaggle_out_gpu/results.jsonl` + `results_t3_moreseeds.jsonl` | `python report_extended.py t3` |
+| Table 4 (gate, rigid rotation) | `kaggle_out_gate/results.jsonl` | `python report_gate.py kaggle_out_gate` |
+| Table 5 (pixel pendulum, 5 seeds, incl. the false accept) | `kaggle_out_partial/`, `kaggle_out_gate/`, `results_pend_moreseeds.jsonl` | `python report_extended.py t5` |
+| Table 6 (two objects, 5 seeds) + three-object check | `kaggle_out_scenario2/results2.jsonl` + `results2_moreseeds.jsonl` / `results3.jsonl` | `python report_extended.py axis2` |
+| Capacity-vs-object-count isolation | `results_axis1.jsonl`, `results_oneobj_wide.jsonl` | `python report_extended.py axis1` (then `axis2`) |
+| Neural ODE, 5 seeds | `results_node5.jsonl` | `python report_extended.py node` |
+| Gate noise sweep (rigid rotation / pendulum) | `results_noise.jsonl` / `results_pend_noise.jsonl` | `python report_extended.py noise` / `pendnoise` |
+| α/β sensitivity | `kaggle_out_sweep/sweep_results.jsonl` | `python report_mr.py kaggle_out_sweep` |
+| Non-marginal (damped/growing) generators | `kaggle_out_damped/damped_results.jsonl` | inspect directly (small file, no dedicated report script) |
+| Decoder Lipschitz control | `kaggle_out_lipschitz/lipschitz_results.jsonl` | inspect directly |
+| Off-grid-supervision ablation | `kaggle_out_offgrid/offgrid_results.jsonl` | inspect directly |
+| Amplitude-dependent certificate (Appendix) | `synth_amp_results.json`, `synth_certificate_results.json`, `pend2_*.jsonl`, `pend3_results.jsonl`, `pend4_results.jsonl` | inspect directly, or rerun via `synth_amp_test.py` / `synth_certificate_test.py` / `run_pend2.py` / `run_pend3.py` / `run_pend4.py` |
+
+Every `run*.py` / `data*.py` script is self-contained and documents in its header comment which
+existing files it imports from (and never modifies) and which new ones it adds; `--help` lists
+its own arguments. `kaggle_out_*/` directories hold the raw outputs (results files and logs) from
+the GPU runs reported in the paper; `build_*_kernel.py` scripts show exactly how each was packaged
+and launched, for anyone who wants to rerun training from scratch rather than just read the results.
 
 Requires Python 3, PyTorch, and NumPy (see `requirements.txt`).
 
