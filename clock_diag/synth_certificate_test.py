@@ -27,8 +27,8 @@ def eval_certificate(model, seed=777, n=256):
     res_j0, om_j0 = res[:, 0], om_pred[:, 0]
     true_err = (om_j0 - true_omega(r0_true)).abs()
     # ONEMLI: r_enc (modelin KENDI kodladigi yaricap) GENEL OLARAK r0_true ile AYNI OLCEKTE
-    # DEGIL -- encoder, r'yi keyfi bir monoton donusumle yeniden-parametreleyebilir (bkz.
-    # NOTES_nonlinear.md Bolum 3, ayni ozdeslenemezlik). Bu yuzden tablo GERCEK r0 ile
+    # DEGIL -- encoder, r'yi keyfi bir monoton donusumle yeniden-parametreleyebilir. Bu yuzden
+    # tablo GERCEK r0 ile
     # binleniyor (dogrulama amacli, gercekte r0 bilinmez ama burada biliniyor); ama
     # sertifikanin KENDISI (residual) sadece modelin r_enc/omega_eff'ine bakiyor, r0_true'ya
     # HIC erismiyor -- dogru sekilde "korlemesine" hesaplaniyor.

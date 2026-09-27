@@ -1,5 +1,5 @@
-"""Görev D Kaggle kernel paketleme: α (karışım oranı) ve β=Δt2/Δt1 duyarlılık taraması, dmd=mr.
-omega_mult=0.763932 (mevcut kaggle_out_gpu referansıyla AYNI omega).
+"""Kaggle kernel paketleme: α (karışım oranı) ve β=Δt2/Δt1 duyarlılık taraması, dmd=mr.
+omega_mult=0.763932 (mevcut kaggle_out_gpu referansıyla aynı omega).
 α taraması: β=√2/2 sabit, α∈{0.03,0.0625,0.25} (0.125 referans zaten kaggle_out_gpu'da var).
 β taraması: α=0.125 sabit, β∈{0.5,0.51 (Prop1'in kötü öngördüğü küçük-paydalı yakın değerler),
 0.618 (altın oran eşleniği, 'iyi' irrasyonel-benzer), 0.85 ('iyi', √2/2'den farklı)}
@@ -25,7 +25,7 @@ for beta in BETAS:
 
 files_b64 = {f: base64.b64encode(open(f, "rb").read()).decode() for f in SRC_FILES}
 
-kernel = f"""# clock-sweep (tek cekirdek): Gorev D -- alfa/beta duyarlilik taramasi, dmd=mr.
+kernel = f"""# clock-sweep (tek cekirdek): alfa/beta duyarlilik taramasi, dmd=mr.
 import base64, os, subprocess, sys, json, time
 from concurrent.futures import ThreadPoolExecutor
 FILES = {files_b64!r}

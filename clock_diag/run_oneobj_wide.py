@@ -1,7 +1,7 @@
-# Gorev A, eksen 2 (nesne sayisi, sabit kapasite): run2.py'nin AYNI kapasitesi (n_osc=6,n_static=4,d=16)
-# ama SADECE TEK hareketli nesne (data_oneobj_wide, data2'nin nesne-1 render'i). run2.py ile birebir
-# ayni egitim/degerlendirme yapisi (mirror), sadece veri kaynagi tek-nesne. data.py/data2.py/run2.py/
-# models.py/losses.py/dmd_init.py DEGISTIRILMEDI -- sadece import edildi.
+# Nesne sayisi mi kapasite mi: run2.py'nin ayni kapasitesi (n_osc=6,n_static=4,d=16) ama
+# sadece tek hareketli nesne (data_oneobj_wide, data2'nin nesne-1 render'i). run2.py ile
+# ayni egitim/degerlendirme yapisi, sadece veri kaynagi tek-nesne.
+# data.py/data2.py/run2.py/models.py/losses.py/dmd_init.py degistirilmez, sadece import edilir.
 import argparse, json, math, time, numpy as np, torch, torch.nn.functional as F
 import data_oneobj_wide as D1, dmd_init
 from data import DEV

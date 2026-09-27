@@ -1,7 +1,7 @@
 # Tek-nesne kontrolu, ama data2.py'nin render olcegi/konumuyla (SCALE, OFFSETS[0]):
-# iki-nesne sahnesiyle AYNI goruntu karmasikligi (nesne boyutu/yerlesimi), SADECE tek hareketli nesne.
-# Amac: "genisletilmis latent kapasite (n_osc=6,n_static=4) + iki nesne" ile "ayni kapasite + tek nesne"
-# arasinda ayrim yapabilmek icin sahne render'ini data2 ile sabit tutmak (Gorev A, eksen 2).
+# iki-nesne sahnesiyle ayni goruntu karmasikligi (nesne boyutu/yerlesimi), sadece tek hareketli
+# nesne. Amac: "genisletilmis latent kapasite (n_osc=6,n_static=4) + iki nesne" ile "ayni
+# kapasite + tek nesne" arasinda ayrim yapabilmek icin sahne render'ini data2 ile sabit tutmak.
 # Sadece data.py / data2.py'den okur, hicbirini degistirmez.
 import math, torch
 from data import DEV, H, sample_times

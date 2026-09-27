@@ -7,7 +7,7 @@ omega(r^2) yasasiyla kuruluyor -- yani model sinifi (KoopAmp) ile veri-uretme su
 ESLESIYOR. Bu, yontem icin en ELVERISLI kosul: CNN piksel encoder karmasikligi yok, eliptik
 integral yaklasiklama zorlugu yok. Eger yontem burada bile basarisiz olursa, bu sadece
 "kucuk MLP transandantal fonksiyonu yakalayamiyor" degil, daha derin bir optimizasyon/
-ozdeslenebilirlik sorunu oldugunu gosterir (bkz. NOTES_nonlinear.md).
+ozdeslenebilirlik sorunu oldugunu gosterir.
 
 Gercek dinamik (tam kapali form, sayisal entegrasyon YOK -- r korunumlu donme):
   r0 ~ U(0.3, 1.2)      (sarkac genlik araligiyla ayni, cf. data_pend.py)

@@ -1,7 +1,7 @@
 """r-BAGIMLI sertifika: coklu-hizli tutarlilik testini TEK YORUNGE / TEK GENLIK duzeyine indirger.
 
-AYRI arastirma dosyasi (bkz. NOTES_nonlinear.md Bolum 6). `dmd_init.py`'ye DOKUNULMADI,
-sadece okundu; bu YENI bir dosya, mevcut kodu bozmuyor.
+Ayri arastirma dosyasi. `dmd_init.py`'ye dokunulmaz, sadece okunur; bu yeni bir dosya,
+mevcut kodu bozmaz.
 
 MOTIVASYON: `dmd_init.py`'deki multirate_reinit()/multirate_lift() TAMAMEN sabit-omega_j
 varsayimiyla yazilmis -- butun veri havuzunda TEK bir DMD ile TEK bir omega_j kestirilip

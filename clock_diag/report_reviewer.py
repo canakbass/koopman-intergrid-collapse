@@ -1,5 +1,5 @@
-# Gorev A/B/C/D icin ham-veri raporu: eski + yeni tohumlari birlestirip ortalama/aralik hesaplar.
-# Sadece OKUR (results*.jsonl, kaggle_out*/results*.jsonl); hicbir protected dosyaya yazmaz.
+# Ham-veri raporu: eski + yeni tohumlari birlestirip ortalama/aralik hesaplar.
+# Sadece okur (results*.jsonl, kaggle_out*/results*.jsonl); hicbir kaynak dosyaya yazmaz.
 import json, math, glob
 from collections import defaultdict
 import numpy as np

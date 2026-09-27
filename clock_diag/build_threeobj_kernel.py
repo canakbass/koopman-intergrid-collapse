@@ -1,4 +1,4 @@
-"""Bonus kernel (Gorev A): three independent rotating objects, control vs multi-rate lifting,
+"""Three independent rotating objects, control vs multi-rate lifting,
 5 seeds. Tests whether the control/L_Delta ratio keeps shrinking monotonically (1->2->3 objects)
 or saturates at 2. Mirrors the existing kaggle_*/build_*_kernel.py pattern exactly."""
 import base64, json, os
@@ -14,7 +14,7 @@ for s in range(5):
 
 files_b64 = {f: base64.b64encode(open(f, "rb").read()).decode() for f in SRC_FILES}
 
-kernel = f"""# clock-threeobj (bonus, Gorev A): uc bagimsiz donen nesne, control vs multi-rate, 5 tohum.
+kernel = f"""# clock-threeobj: uc bagimsiz donen nesne, control vs multi-rate, 5 tohum.
 import base64, os, subprocess, sys, json, time
 from concurrent.futures import ThreadPoolExecutor
 FILES = {files_b64!r}

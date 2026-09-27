@@ -1,6 +1,6 @@
-# YENİ dosya (Görev D, bkz. NOTES_robustness.md). data.py'ye DOKUNULMADI, sadece import edilip
-# sample_times/batch ŞABLON alınarak MR_FRAC (α, karışım oranı) ve DT2 (β=Δt2/Δt1, ikinci hız)
-# PARAMETRE olarak açılıyor -- mevcut data.py'de bu ikisi sabit (MR_FRAC=0.125, DT2=√2/2).
+# data.py'nin sample_times/batch fonksiyonlarını taban alır (data.py değiştirilmez);
+# MR_FRAC (α, karışım oranı) ve DT2 (β=Δt2/Δt1, ikinci hız) parametre olarak açılır --
+# data.py'de bu ikisi sabittir (MR_FRAC=0.125, DT2=√2/2).
 import math, torch
 import data
 from data import DEV

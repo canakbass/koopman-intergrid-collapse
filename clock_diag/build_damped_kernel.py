@@ -1,4 +1,4 @@
-"""Görev A Kaggle kernel paketleme: sönümlü/büyüyen özdeğer testi. 3 konfig (control/multirate/
+"""Kaggle kernel paketleme: sönümlü/büyüyen özdeğer testi. 3 konfig (control/multirate/
 oracle) x 3 tohum x 2 mu işareti (buyuyen +0.08 / sönümlü -0.08) = 18 iş."""
 import base64, json, os
 
@@ -16,7 +16,7 @@ for mu in MUS:
 
 files_b64 = {f: base64.b64encode(open(f, "rb").read()).decode() for f in SRC_FILES}
 
-kernel = f"""# clock-damped (tek cekirdek): Gorev A -- sonumlu/buyuyen (marjinal olmayan) ozdeger testi.
+kernel = f"""# clock-damped (tek cekirdek): sonumlu/buyuyen (marjinal olmayan) ozdeger testi.
 import base64, os, subprocess, sys, json, time
 from concurrent.futures import ThreadPoolExecutor
 FILES = {files_b64!r}

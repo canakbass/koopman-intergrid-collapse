@@ -1,6 +1,6 @@
-"""Görev C Kaggle kernel paketleme: decoder spektral-norm (Lipschitz kısıtı) kontrolü.
+"""Kaggle kernel paketleme: decoder spektral-norm (Lipschitz kısıtı) kontrolü.
 dmd=none (control) konfigürasyonu, 3 tohum, omega_mult=0.763932 (results_merged2.jsonl'daki
-SN'siz kontrolle AYNI omega -- doğrudan karşılaştırma için)."""
+SN'siz kontrolle aynı omega -- doğrudan karşılaştırma için)."""
 import base64, json, os
 
 SRC_FILES = ["data.py", "models.py", "losses.py", "diagnostics.py", "dmd_init.py", "run.py", "models_robustness.py", "run_lipschitz.py"]
@@ -14,7 +14,7 @@ for s in SEEDS:
 
 files_b64 = {f: base64.b64encode(open(f, "rb").read()).decode() for f in SRC_FILES}
 
-kernel = f"""# clock-lipschitz (tek cekirdek): Gorev C -- decoder spektral-norm (Lipschitz) kontrolu.
+kernel = f"""# clock-lipschitz (tek cekirdek): decoder spektral-norm (Lipschitz) kontrolu.
 import base64, os, subprocess, sys, json, time
 from concurrent.futures import ThreadPoolExecutor
 FILES = {files_b64!r}

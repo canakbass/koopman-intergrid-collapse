@@ -1,6 +1,7 @@
-# Gorev D: run_pend.py'nin birebir ayni sablonu, --noise argumani HEM egitim batch'lerine
-# HEM dmd_init probe lambda'sina (mevcut run_pend.py'de noise=0.0 sabit) gecirilir.
-# data.py/data_pend.py/dmd_init.py/models.py/run_pend.py DEGISTIRILMEDI, sadece import edildi.
+# run_pend.py'nin ayni sablonu; tek fark, --noise argumaninin hem egitim batch'lerine hem
+# dmd_init probe lambda'sina (run_pend.py'de noise=0.0 sabit) gecirilmesi -- kapinin kendisi
+# artik egitimdekiyle ayni gurultu seviyesinde degerlendiriliyor.
+# data.py/data_pend.py/dmd_init.py/models.py/run_pend.py degistirilmez, sadece import edilir.
 import argparse, json, math, time, numpy as np, torch, torch.nn.functional as F
 import data, data_pend as DP, dmd_init
 from models import KoopCT, KoopAmp

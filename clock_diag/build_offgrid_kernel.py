@@ -1,7 +1,7 @@
-"""Görev B Kaggle kernel paketleme: "spot" (tek dağınık ara-zaman noktası) ablasyonu.
+"""Kaggle kernel paketleme: "spot" (tek dağınık ara-zaman noktası) ablasyonu.
 2 alfa (0.125 = mevcut MR_FRAC ile aynı oran, 0.25 = iki kat) x 3 tohum = 6 iş.
-omega_mult=0.763932 (results_merged2.jsonl kontrolü VE kaggle_out_gpu multi-rate satırlarıyla
-AYNI omega -- üç yönlü karşılaştırma için)."""
+omega_mult=0.763932 (results_merged2.jsonl kontrolü ve kaggle_out_gpu multi-rate satırlarıyla
+aynı omega -- üç yönlü karşılaştırma için)."""
 import base64, json, os
 
 SRC_FILES = ["data.py", "models.py", "losses.py", "diagnostics.py", "dmd_init.py", "run.py", "data_offgrid.py", "run_offgrid.py"]
@@ -17,7 +17,7 @@ for frac in FRACS:
 
 files_b64 = {f: base64.b64encode(open(f, "rb").read()).decode() for f in SRC_FILES}
 
-kernel = f"""# clock-offgrid (tek cekirdek): Gorev B -- "spot" (tek dagitik ara-zaman noktasi) ablasyonu.
+kernel = f"""# clock-offgrid (tek cekirdek): "spot" (tek dagitik ara-zaman noktasi) ablasyonu.
 import base64, os, subprocess, sys, json, time
 from concurrent.futures import ThreadPoolExecutor
 FILES = {files_b64!r}

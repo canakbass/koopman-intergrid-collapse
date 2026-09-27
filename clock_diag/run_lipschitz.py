@@ -1,14 +1,16 @@
-"""Görev C (bkz. NOTES_robustness.md): decoder Lipschitz/düzgünlük kısıtı kontrolü.
-YENİ dosya. DEĞİŞTİRİLMEYEN dosyalar (sadece import): data.py, diagnostics.py (full -- AYNEN
-çağrılıyor, results_merged2.jsonl'daki kontrol satırlarıyla DOĞRUDAN karşılaştırılabilir
-olması için), losses.py, run.py (sadece BAND sabiti import ediliyor). YENİ: models_robustness.py
-(KoopCT_SNDec -- decoder'ın TÜM Linear/ConvTranspose2d katmanları spektral normalizasyon ile
-sarılı, elle ayarlanmış bir ceza katsayısı YOK, standart mimari bir Lipschitz kısıtı).
+"""Decoder Lipschitz/düzgünlük kısıtı kontrolü: decoder'ı mimari olarak daha düzgün yapmak,
+tek başına, ara-zaman hatasını iyileştirir mi?
 
-Hipotez: Prop 1 -- decoder'ın serbest/esnek olması ızgara-dışı davranışı SERBEST bırakıyor
+Sadece data.py, diagnostics.py (full -- kontrol satırlarının önceki sonuçlarla doğrudan
+karşılaştırılabilir olması için), losses.py ve run.py'den (sadece BAND sabiti) import eder.
+Yeni: models_robustness.py (KoopCT_SNDec -- decoder'ın tüm Linear/ConvTranspose2d katmanları
+spektral normalizasyon ile sarılı, elle ayarlanmış bir ceza katsayısı yok, standart mimari
+bir Lipschitz kısıtı).
+
+Hipotez: Prop 1 -- decoder'ın serbest/esnek olması ızgara-dışı davranışı serbest bırakıyor
 (E_AE küçük olması yeterlilik, düzgünlük değil). SN-decoder'lı control'ün E_1/2'si (mse_half)
-SN'siz control'den (results_merged2.jsonl) daha mı düşük (kısıt tek başına yardımcı oluyor mu)
-yoksa fark yok mu (kısıt tek başına yetmiyor, spektral tanılama/multi-rate gerçekten gerekli mi)?
+SN'siz control'den daha mı düşük (kısıt tek başına yardımcı oluyor mu) yoksa fark yok mu
+(kısıt tek başına yetmiyor, spektral tanılama/multi-rate gerçekten gerekli mi)?
 Sadece dmd=none (control) konfigürasyonu -- multi-rate ile birleştirilmiyor, kısıtın TEK BAŞINA
 etkisini izole ediyor.
 """

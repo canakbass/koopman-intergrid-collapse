@@ -1,8 +1,7 @@
-"""Görev B (bkz. NOTES_robustness.md): "sadece birkaç ara-zaman etiketi eklesek olmaz mıydı?"
-ablasyonu. YENİ dosya. DEĞİŞTİRİLMEYEN dosyalar (sadece import): data.py, diagnostics.py
-(full/mse_grids -- AYNEN çağrılıyor, sonuçların results_merged2.jsonl / kaggle_out_gpu ile
-DOĞRUDAN karşılaştırılabilir olması için), losses.py, run.py (sadece build() fonksiyonu import
-ediliyor, model inşası BİREBİR AYNI). YENİ dosya: data_offgrid.py (sample_times_spot/batch_spot).
+"""Ablasyon: "sadece birkaç ara-zaman etiketi eklesek olmaz mıydı?"
+Sadece data.py, diagnostics.py (full/mse_grids -- sonuçların önceki sonuçlarla doğrudan
+karşılaştırılabilir olması için), losses.py ve run.py'den (sadece build() fonksiyonu, model
+inşası birebir aynı) import eder. Yeni dosya: data_offgrid.py (sample_times_spot/batch_spot).
 
 --sampling spot: eğitim döngüsü run.py'nin ana döngüsüyle AYNI, sadece data.batch yerine
 data_offgrid.batch_spot çağrılıyor (dmd=none, model=koop, variant=base -- run.py'deki

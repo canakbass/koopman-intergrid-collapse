@@ -1,10 +1,10 @@
-"""FAZ 4: r-bagimli yerel sertifikanin (dmd_init_nonlinear.py::local_gate_residuals) IKINCI,
+"""r-bagimli yerel sertifikanin (dmd_init_nonlinear.py::local_gate_residuals) IKINCI,
 FARKLI bir genlik-bagimli-frekans nonlineer sistemde -- SERTLESEN (hardening) Duffing-tipi
-acisal osilator, theta'' = -w0^2*theta - eps*theta^3 -- sinanmasi. Faz 3'un (run_pend3.py,
-NOTES_nonlinear.md Bolum 7) full/restricted deney tasarimiyla BIREBIR ayni mantik; TEK fark
+acisal osilator, theta'' = -w0^2*theta - eps*theta^3 -- sinanmasi. run_pend3.py'nin
+full/restricted deney tasarimiyla BIREBIR ayni mantik; TEK fark
 fizik: piksel sarkac (theta''=-w0^2*sin(theta), YUMUSAYAN, genlik arttikca frekans DUSER) yerine
-Duffing (SERTLESEN, genlik arttikca frekans ARTAR) kullaniliyor. Amac: Faz 3'un negatif
-sonucunun (6/6 tohumda negatif korelasyon, sicrama yok) sarkaca ozgu mu yoksa CNN-encoder
+Duffing (SERTLESEN, genlik arttikca frekans ARTAR) kullaniliyor. Amac: sarkactaki negatif
+sonucun (6/6 tohumda negatif korelasyon, sicrama yok) sarkaca ozgu mu yoksa CNN-encoder
 sertifikasyonunun genel bir sinirlamasi mi oldugunu ayirt etmek.
 
 DEGISTIRILMEYEN dosyalar (sadece import): data.py, data_pend.py, data_pend2.py, models.py,
@@ -31,7 +31,7 @@ import argparse, json, math, time, torch, torch.nn.functional as F
 import data, data_pend as DP, data_duffing2 as DD, dmd_init_nonlinear as DI
 from models import KoopAmp
 
-W0, EPS = 2.4, 1.0   # kalibrasyon: bkz. NOTES_nonlinear.md Bolum 8 (eps=1.0 -> th0=0.3->1.2
+W0, EPS = 2.4, 1.0   # kalibrasyon: eps=1.0 -> th0=0.3->1.2
                       # arasinda om ~%8.3 ARTIYOR, pendulumun ~%8-10 DUSMESIYLE karsilastirilabilir buyuklukte, TERS yonde)
 
 

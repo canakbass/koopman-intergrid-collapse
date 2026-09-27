@@ -1,4 +1,4 @@
-# Bonus (Gorev A): uc bagimsiz donen nesne, run2.py'nin AYNI yapisi. n_osc=9,n_static=4 (d=22):
+# Uc bagimsiz donen nesne, run2.py'nin ayni yapisi. n_osc=9,n_static=4 (d=22):
 # 3 gercek frekans icin ~3x yedek kapasite (iki-nesne probunda da 3x idi: 6/2).
 import argparse, json, math, time, numpy as np, torch, torch.nn.functional as F
 import data_threeobj as D3, dmd_init

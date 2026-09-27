@@ -1,20 +1,20 @@
-# YENİ dosya (Görev A ve C, bkz. NOTES_robustness.md). models.py'ye HİÇ DOKUNULMADI, sadece
-# import edilip genişletiliyor -- nonlineer hattın kendi kuralıyla (KoopAmp(KoopCT) gibi) aynı desen.
+# models.py'ye dokunmadan onu genişleten ek model sınıfları -- nonlineer hattaki KoopAmp(KoopCT)
+# ile aynı desen.
 #
-# --- Görev A: sönümlü/büyüyen (marjinal olmayan) özdeğer ---
-# Gözlem (koordinatör tarafından önceden türetildi, bkz. görev talimatı): dmd_init.py::dmd_modal
-# özdeğerin YALNIZCA açısını kullanıyor (`np.angle(lam[i])`); modülüs (`np.abs(lam)`) hesaplanıp
-# `info['dmd_mod']`'a yazılıyor ama hiçbir yerde kullanılmıyor. multirate_lift'teki
-# `th2 = atan2(A[1,0]-A[0,1], A[0,0]+A[1,1])` ifadesi de KANITLANABİLİR ölçek-bağımsız: gerçek
-# bir sönümlü/büyüyen LTI modal çift için tek-adım haritası TAM OLARAK A = c*R(theta) biçimindedir
-# (c = exp(mu*dt), theta = omega*dt -- rotasyon ve ölçekleme komütatif), bu yüzden
-# atan2(2c*sin(theta), 2c*cos(theta)) = theta, c'den bağımsız. Yani dmd_init.py DEĞİŞTİRİLMEDEN
-# sönümlü sistemlere uygulanabilir OLMALI -- yeter ki model sınıfı sönümü (mu_j) temsil edebilsin.
-# KoopDamped bunu sağlıyor: ayrı bir mu parametresi, DMD ile KURULMUYOR (multirate_reinit sadece
-# model.omega'yı kilitliyor / enc-dec'i P ile sarıyor), sadece gradyan inişiyle serbestçe öğreniliyor.
+# --- Sönümlü/büyüyen (marjinal olmayan) özdeğer ---
+# Gözlem: dmd_init.py::dmd_modal özdeğerin yalnızca açısını kullanıyor (`np.angle(lam[i])`);
+# modülüs (`np.abs(lam)`) hesaplanıp `info['dmd_mod']`'a yazılıyor ama hiçbir yerde
+# kullanılmıyor. multirate_lift'teki `th2 = atan2(A[1,0]-A[0,1], A[0,0]+A[1,1])` ifadesi de
+# kanıtlanabilir ölçek-bağımsız: gerçek bir sönümlü/büyüyen LTI modal çift için tek-adım
+# haritası tam olarak A = c*R(theta) biçimindedir (c = exp(mu*dt), theta = omega*dt -- rotasyon
+# ve ölçekleme komütatif), bu yüzden atan2(2c*sin(theta), 2c*cos(theta)) = theta, c'den
+# bağımsız. Yani dmd_init.py değiştirilmeden sönümlü sistemlere uygulanabilir olmalı -- yeter
+# ki model sınıfı sönümü (mu_j) temsil edebilsin. KoopDamped bunu sağlıyor: ayrı bir mu
+# parametresi, DMD ile kurulmuyor (multirate_reinit sadece model.omega'yı kilitliyor / enc-dec'i
+# P ile sarıyor), sadece gradyan inişiyle serbestçe öğreniliyor.
 #
-# --- Görev C: decoder Lipschitz/düzgünlük kısıtı ---
-# Prop 1'in mantığı: decoder'ın serbest/esnek olması ızgara-dışı davranışı SERBEST bırakıyor
+# --- Decoder Lipschitz/düzgünlük kısıtı ---
+# Prop 1'in mantığı: decoder'ın serbest/esnek olması ızgara-dışı davranışı serbest bırakıyor
 # (E_AE küçük olması yeterlilik değil). Standart, elle-ayarlanmış ceza katsayısı gerektirmeyen bir
 # kısıt: decoder'ın Linear/ConvTranspose2d katmanlarını spektral normalizasyon (Lipschitz sabiti
 # mimari olarak sınırlanır) ile sarmak.

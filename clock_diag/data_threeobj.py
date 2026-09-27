@@ -1,5 +1,5 @@
-# Bonus (Gorev A): uc bagimsiz donen nesne, data2.py'nin AYNI _obj/_shapes altyapisiyla.
-# Uc ayrik bolge (ust-orta, sol-alt, sag-alt), cakisma yok. data.py/data2.py'yi DEGISTIRMEZ, sadece kullanir.
+# Uc bagimsiz donen nesne, data2.py'nin ayni _obj/_shapes altyapisiyla.
+# Uc ayrik bolge (ust-orta, sol-alt, sag-alt), cakisma yok. data.py/data2.py'yi degistirmez, sadece kullanir.
 import math, torch
 from data import DEV, H, sample_times
 from data2 import _obj

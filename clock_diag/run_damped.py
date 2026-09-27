@@ -1,12 +1,14 @@
-"""Görev A (bkz. NOTES_robustness.md): sönümlü/büyüyen (marjinal olmayan) özdeğer testi.
-YENİ dosya. DEĞİŞTİRİLMEYEN dosyalar (sadece import): data.py (sample_times/DEV/H),
-dmd_init.py (multirate_reinit -- AYNEN çağrılıyor). YENİ dosyalar: models_robustness.py
-(KoopDamped), data_damped.py (render_damped/video_damped/batch_damped), bu dosya.
+"""Sönümlü/büyüyen (marjinal olmayan) özdeğer testi: multi-rate kaldırma yöntemi, sadece
+dönme değil, sönüm/büyüme de içeren jeneratörlerde çalışır mı?
 
-Hipotez: dmd_init.py'nin DMD/multi-rate makinesi özdeğerin sadece AÇISINI kullanıyor (modülüs
-atılıyor) ve multirate_lift'teki atan2 ifadesi ölçek-bağımsız (kanıt: bkz. models_robustness.py
-başlığı) -- bu yüzden dmd_init.py'ye HİÇ dokunmadan, sadece model sınıfına ayrı bir mu (sönüm)
-parametresi ekleyerek, mevcut multi-rate kilitleme sönümlü sistemlerde de çalışmalı.
+Sadece data.py (sample_times/DEV/H) ve dmd_init.py'den (multirate_reinit) import eder,
+ikisine de yazmaz. Yeni: models_robustness.py (KoopDamped), data_damped.py.
+
+Hipotez: dmd_init.py'nin DMD/multi-rate makinesi özdeğerin sadece açısını kullanıyor
+(modülüs atılıyor) ve multirate_lift'teki atan2 ifadesi ölçek-bağımsız (bkz.
+models_robustness.py) -- bu yüzden dmd_init.py'ye dokunmadan, sadece model sınıfına ayrı bir
+mu (sönüm) parametresi ekleyerek, mevcut multi-rate kilitleme sönümlü sistemlerde de
+çalışmalı.
 
 3 konfig x 3 tohum x 2 işaret (büyüyen/sönümlü) = 18 koşu:
   control    : dmd=none,  sampling=regular (hiç Δ2 görmüyor) -- ana makaledeki "sessiz başarısızlık"

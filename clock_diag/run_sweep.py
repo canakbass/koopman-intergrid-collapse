@@ -1,16 +1,16 @@
-"""Görev D (bkz. NOTES_robustness.md): α (karışım oranı) ve β=Δt2/Δt1 duyarlılık taraması.
-YENİ dosya. DEĞİŞTİRİLMEYEN dosyalar (sadece import): data.py, diagnostics.py (full -- AYNEN),
-losses.py, dmd_init.py (dmd_modal / multirate_lift / _install -- AYNEN çağrılıyor, DEĞİŞTİRİLMEDEN).
-YENİ: data_sweep.py (sample_times_sweep/batch_sweep, MR_FRAC/DT2'yi parametre yapıyor).
+"""α (karışım oranı) ve β=Δt2/Δt1 duyarlılık taraması.
+Sadece data.py, diagnostics.py (full), losses.py ve dmd_init.py'den (dmd_modal, multirate_lift,
+_install) import eder, hiçbirini değiştirmez.
+Yeni: data_sweep.py (sample_times_sweep/batch_sweep, MR_FRAC/DT2'yi parametre yapıyor).
 
-ÖNEMLİ İNCELİK: dmd_init.py::multirate_reinit, dmd_init.py::multirate_lift'i dt2 PARAMETRESİ
-VERMEDEN çağırıyor (`multirate_lift(om, zp2)`), yani multirate_lift'in DEFAULT'u
-(2**0.5/2) HER ZAMAN kullanılıyor -- β'yı süpürmek için multirate_reinit'i OLDUĞU GİBİ
-kullanmak YANLIŞ olurdu (üretilen "d2" verisi gerçek dt2 ile aralıklı olsa bile, kaldırma adayı
-eşleştirmesi sabit 0.7071 ile yapılır, β != 0.7071 iken YANLIŞ omega bulur). Bu yüzden burada
-multirate_reinit'in mantığı ELLE, dt2'yi doğru şekilde multirate_lift'e ileterek tekrarlanıyor
-(dmd_init.dmd_modal / dmd_init.multirate_lift / dmd_init._install -- HEPSİ DEĞİŞTİRİLMEDEN,
-sadece dt2 argümanı AÇIKÇA geçiriliyor). Bu, dmd_init.py'ye dokunmadan mevcut, zaten
+Önemli incelik: dmd_init.py::multirate_reinit, multirate_lift'i dt2 parametresi vermeden
+çağırıyor (`multirate_lift(om, zp2)`), yani multirate_lift'in varsayılanı (2**0.5/2) her
+zaman kullanılıyor -- β'yı süpürmek için multirate_reinit'i olduğu gibi kullanmak yanlış
+olurdu (üretilen "d2" verisi gerçek dt2 ile aralıklı olsa bile, kaldırma adayı eşleştirmesi
+sabit 0.7071 ile yapılır, β != 0.7071 iken yanlış omega bulur). Bu yüzden burada
+multirate_reinit'in mantığı elle, dt2'yi doğru şekilde multirate_lift'e ileterek tekrarlanıyor
+(dmd_init.dmd_modal / dmd_init.multirate_lift / dmd_init._install, hiçbiri değiştirilmeden,
+sadece dt2 argümanı açıkça geçiriliyor). Bu, dmd_init.py'ye dokunmadan mevcut, zaten
 parametreli fonksiyonunu doğru kullanmaktır.
 """
 import argparse, json, math, time, numpy as np, torch

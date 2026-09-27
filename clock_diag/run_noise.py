@@ -1,8 +1,8 @@
-# Gorev D: run.py'nin BIREBIR ayni sablonu, tek fark --noise argumaninin HEM ana egitim
-# batch'lerine HEM DE dmd_init cagrilarinin kendi probe lambda'larina gecirilmesi
-# (run.py/run_pend.py'de bu lambda'lar noise=0.0 sabitliyor -- kapı boyle HER ZAMAN gurultusuz
-# degerlendiriliyordu; burada kapı da egitimdekiyle AYNI gurultu seviyesinde degerlendiriliyor).
-# data.py/models.py/dmd_init.py/losses.py/run.py DEGISTIRILMEDI, sadece import edildi.
+# run.py'nin ayni sablonu, tek fark --noise argumaninin hem ana egitim batch'lerine hem de
+# dmd_init cagrilarinin kendi probe lambda'larina gecirilmesi (run.py/run_pend.py'de bu
+# lambda'lar noise=0.0 sabitliyor -- kapı boyle her zaman gurultusuz degerlendiriliyordu;
+# burada kapı da egitimdekiyle ayni gurultu seviyesinde degerlendiriliyor).
+# data.py/models.py/dmd_init.py/losses.py/run.py degistirilmez, sadece import edilir.
 import argparse, json, math, time, numpy as np, torch
 import data, diagnostics, dmd_init
 from models import KoopCT, NODE, KoopAmp

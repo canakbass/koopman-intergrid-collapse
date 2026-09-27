@@ -1,6 +1,6 @@
-# YENİ dosya (Görev A, bkz. NOTES_robustness.md). data.py'ye DOKUNULMADI, sadece import edilip
-# genişletildi: glyph artık sadece dönmüyor, aynı zamanda büyüyor/küçülüyor (skala = exp(mu*t)),
-# modelin latent uzayındaki sönümlü/büyüyen bir modu temsil etmesi için sentetik gözlem.
+# data.py'yi taban alır (değiştirilmez), genişletir: glyph artık sadece dönmüyor, aynı zamanda
+# büyüyor/küçülüyor (skala = exp(mu*t)), modelin latent uzayındaki sönümlü/büyüyen bir modu
+# temsil etmesi için sentetik gözlem.
 import math, torch
 import data
 from data import DEV, H, GY, GX, _shapes

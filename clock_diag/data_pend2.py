@@ -1,6 +1,6 @@
-# FAZ 3: kisitli-genlik-araligi orneklemesi. data_pend.py DEGISTIRILMEDI, sadece import
-# edilip render/theta_at/video/DEV/W0 kullanildi -- ayni sample_th0'in lo/hi parametreli
-# hali (bkz. NOTES_nonlinear.md Bolum 7, PROPOSED_addition.md Secenek B adim 1).
+# Kisitli-genlik-araligi orneklemesi. data_pend.py degistirilmez, sadece import
+# edilip render/theta_at/video/DEV/W0 kullanilir -- ayni sample_th0'in lo/hi parametreli
+# hali.
 import torch
 import data_pend as DP
 

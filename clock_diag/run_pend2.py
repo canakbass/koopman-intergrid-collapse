@@ -60,9 +60,9 @@ def main(a):
         out["f_true"] = ((ang - th).abs() < math.radians(8))[mid].float().mean().item()
         # r-bagimli yerel sertifika (bkz. dmd_init_nonlinear.py). ONEMLI: TRUE |th0| ile
         # binleniyor (dogrulama/tani amacli) -- modelin KENDI kodladigi yaricap r, genel
-        # olarak |th0| ile AYNI OLCEKTE DEGIL (bkz. NOTES_nonlinear.md Bolum 3/6.2, encoder
-        # keyfi radyal yeniden-parametreleme yapabiliyor); residual'in KENDISI yine de sadece
-        # modelin enc/omega_eff'ine bakiyor, th0'a hic erismiyor.
+        # olarak |th0| ile AYNI OLCEKTE DEGIL (encoder keyfi radyal yeniden-parametreleme
+        # yapabiliyor); residual'in KENDISI yine de sadece modelin enc/omega_eff'ine bakiyor,
+        # th0'a hic erismiyor.
         gc = torch.Generator().manual_seed(1234 + a.seed)
         x1, x2, th0_abs = gen_pair(256, 8, gc)
         r, res, om_pred = DI.local_gate_residuals(model, x1, x2)

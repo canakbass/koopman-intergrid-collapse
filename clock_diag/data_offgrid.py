@@ -1,9 +1,9 @@
-# YENİ dosya (Görev B, bkz. NOTES_robustness.md). data.py'ye DOKUNULMADI, sadece import edilip
-# sample_times ŞABLON alınarak yeni bir "spot" modu eklendi: yöntemin (tutarlı bir ikinci Δ2
-# örnekleme hızı) gerekliliğini test eden en ucuz kontrol -- dizilerin küçük bir kısmında
-# (data.MR_FRAC ile AYNI oran, adil karşılaştırma), K adımdan SADECE BİRİ tam-sayı yerine
-# ızgara-dışı, rastgele bir kesirli zamana kaydırılıyor (kalan adımlar hep Δ1 ızgarasında --
-# yani "mr" modunun aksine TUTARLI bir ikinci hız YOK, sadece dağınık tek bir nokta).
+# data.py'nin sample_times fonksiyonunu taban alır (data.py değiştirilmez); yeni bir "spot"
+# modu eklenir: yöntemin (tutarlı bir ikinci Δ2 örnekleme hızı) gerekliliğini test eden en
+# ucuz kontrol -- dizilerin küçük bir kısmında (data.MR_FRAC ile aynı oran, adil karşılaştırma),
+# K adımdan sadece biri tam-sayı yerine ızgara-dışı, rastgele bir kesirli zamana kaydırılıyor
+# (kalan adımlar hep Δ1 ızgarasında -- yani "mr" modunun aksine tutarlı bir ikinci hız yok,
+# sadece dağınık tek bir nokta).
 import math, torch
 import data
 from data import DEV
