@@ -1,0 +1,45 @@
+[{"stream_name":"stdout","time":8.803000708,"data":"torch 2.10.0+cu128 cuda True\n"}
+,{"stream_name":"stdout","time":13.806344029,"data":"dmd_init selftest: OK selftest DMD modal: |ω| bulunan=[np.float64(0.05), np.float64(0.3), np.float64(1.9), np.float64(2.3562)] gerçek=[np.float64(0.05), np.float64(0.3), np.float64(1.9), np.float64(2.3562)] modal tabanda tek adım hatası=5.4e-14 cond(P)=117.9 OK\n"}
+,{"stream_name":"stdout","time":13.806391853000001,"data":"selftest harmonik: ana dal φ/π=[ 0.75 -0.5   0.25 -0.75] -\u003e kaldırılmış |ω|/π=[0.75 1.5  2.25 0.75] (gerçek [0.75 1.5  2.25 0.75]) OK\n"}
+,{"stream_name":"stdout","time":13.806400791,"data":"selftest çok hızlı: ana dal |ω|/π=[0.095 0.25  0.5   0.75 ] -\u003e kaldırılmış [0.095 0.75  1.5   2.25 ] (gerçek [0.095 0.75  1.5   2.25 ]) min marj=0.76 OK\n"}
+,{"stream_name":"stdout","time":13.806408091,"data":"selftest çok hızlı: ana dal |ω|/π=[0.095 0.292 0.472 0.764] -\u003e kaldırılmış [0.095 0.764 1.528 2.292] (gerçek [0.095 0.764 1.528 2.292]) min marj=0.76 OK\n"}
+,{"stream_name":"stdout","time":13.806414176,"data":"selftest kısmi: seçilen |ω|=2.3000 rad/s (gerçek temel 2.3), artık=0.0e+00, ikinci en iyi aday artığı=1.84 OK\n"}
+,{"stream_name":"stdout","time":13.806419546,"data":" \n"}
+,{"stream_name":"stdout","time":137.924336959,"data":"[   124s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.75 --seed 1 --out results_t3_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":138.574530491,"data":"[   125s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.75 --seed 0 --out results_t3_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":139.016977194,"data":"[   125s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.75 --seed 2 --out results_t3_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":263.707711386,"data":"[   250s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.763932 --seed 1 --out results_t3_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":265.080468414,"data":"[   251s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.763932 --seed 0 --out results_t3_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":265.20625731,"data":"[   251s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.763932 --seed 2 --out results_t3_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":384.746772772,"data":"[   371s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 2.763932 --seed 0 --out results_t3_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":389.622087765,"data":"[   376s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 2.763932 --seed 2 --out results_t3_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":390.022968375,"data":"[   376s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 2.763932 --seed 1 --out results_t3_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":503.278134879,"data":"[   489s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.5 --seed 0 --out results_t3_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":513.184226163,"data":"[   499s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.5 --seed 2 --out results_t3_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":514.798884451,"data":"[   501s] run.py --model koop --sampling mr --dmd mr --light --omega_mult 0.5 --seed 1 --out results_t3_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":624.6391511,"data":"[   611s] run.py --model koop --dmd lock --omega_mult 0.75 --seed 0 --out results_t2_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":636.29043419,"data":"[   622s] run.py --model koop --dmd lock --omega_mult 0.75 --seed 1 --out results_t2_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":637.831657363,"data":"[   624s] run.py --model koop --dmd ft --omega_mult 0.75 --seed 0 --out results_t2_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":745.332122985,"data":"[   732s] run.py --model koop --dmd ft --omega_mult 0.75 --seed 1 --out results_t2_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":759.630201403,"data":"[   746s] run.py --model koop --dmd harm --omega_mult 0.75 --seed 0 --out results_t2_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":760.728396789,"data":"[   747s] run.py --model koop --dmd harm --omega_mult 0.75 --seed 1 --out results_t2_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":863.824610924,"data":"[   850s] run.py --model koop --dmd lock --omega_mult 0.763932 --seed 0 --out results_t2_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":885.533509356,"data":"[   872s] run.py --model koop --dmd lock --omega_mult 0.763932 --seed 1 --out results_t2_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":886.418689052,"data":"[   873s] run.py --model koop --dmd ft --omega_mult 0.763932 --seed 0 --out results_t2_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":983.065707217,"data":"[   969s] run.py --model koop --dmd ft --omega_mult 0.763932 --seed 1 --out results_t2_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":1011.170446449,"data":"[   997s] run.py --model koop --dmd harm --omega_mult 0.763932 --seed 1 --out results_t2_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":1011.404320623,"data":"[   998s] run.py --model koop --dmd harm --omega_mult 0.763932 --seed 0 --out results_t2_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":1101.986682694,"data":"[  1088s] run.py --model koop --dmd lock --omega_mult 2.763932 --seed 0 --out results_t2_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":1134.737795861,"data":"[  1121s] run.py --model koop --dmd lock --omega_mult 2.763932 --seed 1 --out results_t2_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":1136.293496986,"data":"[  1122s] run.py --model koop --dmd ft --omega_mult 2.763932 --seed 0 --out results_t2_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":1220.81743193,"data":"[  1207s] run.py --model koop --dmd ft --omega_mult 2.763932 --seed 1 --out results_t2_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":1249.704691973,"data":"[  1236s] run.py --model koop --dmd harm --omega_mult 2.763932 --seed 0 --out results_t2_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":1249.766673813,"data":"[  1236s] run.py --model koop --dmd harm --omega_mult 2.763932 --seed 1 --out results_t2_rerun.jsonl OK\n"}
+,{"stream_name":"stdout","time":1249.798849497,"data":"BITTI\n"}
+,{"stream_name":"stderr","time":1252.746969228,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1252.747034322,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1253.103640956,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1253.103669479,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1253.889881454,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1255.331778922,"data":"[NbConvertApp] Writing 356664 bytes to __results__.html\n"}
+]

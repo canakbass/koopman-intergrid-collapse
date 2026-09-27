@@ -67,7 +67,10 @@ clock_diag/
                                          of models.py; the original classes are untouched)
     build_*_kernel.py                   Kaggle kernel packaging scripts used to run the corresponding
                                          experiments on GPU
-    report_extended.py                  merges/reports the robustness-check results above
+    report_extended.py                  merges/reports the extended-seed and robustness-check results
+    build_rerun_kernel.py               re-runs the spectral arms of Tables 2-3 whose original seeds used an
+                                         earlier right-eigenvector modal basis, so that every seed in both
+                                         tables uses the current dmd_init.py
 
   Exploratory: toward an amplitude-dependent certificate (NOT part of the core paper's claims)
     synth_amp_test.py, synth_certificate_test.py
@@ -102,15 +105,16 @@ reads from and which script prints it:
 |---|---|---|
 | Table 1 (6-seed diagnostic sweep) | `results_merged2.jsonl` | `python report.py results_merged2.jsonl` |
 | ρ=1/4 anomaly + q=3/4/6/8 resolution | `results_merged2.jsonl` (same file; filter `omega_mult` ∈ {0.5, 0.75, 0.7639, 1.6667, 0.6667, 0.3333, 2.5, 2.7639} for ρ ∈ {1/4, 3/8, golden, 5/6, 1/3, 1/6, 5/4, 1+golden}) | `python report_rho.py results_merged2.jsonl` (covers 1/4, 3/8, golden, 5/4; the q=3/6 rows need the same manual filter on the raw file) |
-| Table 2 (single-rate DMD init, 5 seeds) | `kaggle_out/results.jsonl` + `results_t2_moreseeds.jsonl` | `python report_extended.py t2` |
-| Table 3 (multi-rate lifting, 5 seeds) | `kaggle_out_gpu/results.jsonl` + `results_t3_moreseeds.jsonl` | `python report_extended.py t3` |
+| Table 2 (single-rate DMD init, 5 seeds) | baseline: `kaggle_out/results.jsonl` + `results_t2_moreseeds.jsonl`; spectral rows: `kaggle_out_rerun/results_t2_rerun.jsonl` (seeds 0-1) + `results_t2_moreseeds.jsonl` (seeds 2-4) | `python report_extended.py t2` |
+| Table 3 (multi-rate lifting, 5 seeds) | control: `kaggle_out_gpu/results.jsonl` + `results_t3_moreseeds.jsonl`; lifting: `kaggle_out_rerun/results_t3_rerun.jsonl` (seeds 0-2) + `results_t3_moreseeds.jsonl` (seeds 3-4) | `python report_extended.py t3` |
 | Table 4 (gate, rigid rotation) | `kaggle_out_gate/results.jsonl` | `python report_gate.py kaggle_out_gate` |
 | Table 5 (pixel pendulum, 5 seeds, incl. the false accept) | `kaggle_out_partial/`, `kaggle_out_gate/`, `results_pend_moreseeds.jsonl` | `python report_extended.py t5` |
 | Table 6 (two objects, 5 seeds) + three-object check | `kaggle_out_scenario2/results2.jsonl` + `results2_moreseeds.jsonl` / `results3.jsonl` | `python report_extended.py axis2` |
+| Three-object per-mode lift (out-of-band locks, frequency collision) | `results3.jsonl` | `python report_extended.py threeobj` |
 | Capacity-vs-object-count isolation | `results_axis1.jsonl`, `results_oneobj_wide.jsonl` | `python report_extended.py axis1` (then `axis2`) |
 | Neural ODE, 5 seeds | `results_node5.jsonl` | `python report_extended.py node` |
 | Gate noise sweep (rigid rotation / pendulum) | `results_noise.jsonl` / `results_pend_noise.jsonl` | `python report_extended.py noise` / `pendnoise` |
-| α/β sensitivity | `kaggle_out_sweep/sweep_results.jsonl` | `python report_mr.py kaggle_out_sweep` |
+| α/β sensitivity | `kaggle_out_sweep/sweep_results.jsonl` | `python report_extended.py sweep` |
 | Non-marginal (damped/growing) generators | `kaggle_out_damped/damped_results.jsonl` | inspect directly (small file, no dedicated report script) |
 | Decoder Lipschitz control | `kaggle_out_lipschitz/lipschitz_results.jsonl` | inspect directly |
 | Off-grid-supervision ablation | `kaggle_out_offgrid/offgrid_results.jsonl` | inspect directly |
@@ -119,7 +123,8 @@ reads from and which script prints it:
 Every `run*.py` / `data*.py` script is self-contained and documents in its header comment which
 existing files it imports from (and never modifies) and which new ones it adds; `--help` lists
 its own arguments. `kaggle_out_*/` directories hold the raw outputs (results files and logs) from
-the GPU runs reported in the paper; `build_*_kernel.py` scripts show exactly how each was packaged
+the runs reported in the paper (`kaggle_out/` ran on CPU, all others on a T4 GPU). `dmd mr` runs
+are gate-free (every lifted mode is locked); `dmd mrg` and `partialg` apply the residual gate; `build_*_kernel.py` scripts show exactly how each was packaged
 and launched, for anyone who wants to rerun training from scratch rather than just read the results.
 
 Requires Python 3, PyTorch, and NumPy (see `requirements.txt`).
