@@ -82,6 +82,16 @@ chk("appendix tikanma %", D_CYL / NY * 100, 10.0)
 chk("appendix harmonik sayisi", M, 8, tol=0.0)
 chk("appendix harmonik 4 payi %", E[3] / sum(E) * 100, 0.6, tol=0.2)
 
+# --- iki gosterimin ayni kosulardan geldigi (app:rho capraz atfi)
+mg2 = [json.loads(l) for l in open("results_merged2.jsonl")]
+orc14 = sorted([r for r in mg2 if r["model"] == "oracle" and r["omega_mult"] == 0.5], key=lambda r: r["seed"])
+chk("app:rho 131 = mse_half/train_mse (ortalamalarin orani)",
+    sum(r["mse_half"] for r in orc14) / sum(r["train_mse"] for r in orc14), 131, tol=0.01)
+_v = sorted(r["mid_over_grid"] for r in orc14)
+chk("midpoint-only oran, en kucuk", _v[0], 239, tol=0.01)
+chk("midpoint-only oran, en buyuk", _v[-1], 331, tol=0.01)
+chk("midpoint-only oran, medyan", m([r["mid_over_grid"] for r in orc14]), 284, tol=0.01)
+
 print(f"DOGRULANAN: {len(ok)}")
 for b in bad: print("  UYUSMUYOR ->", b)
 print("SONUC:", "hepsi tutuyor" if not bad else f"{len(bad)} UYUSMAZLIK")
