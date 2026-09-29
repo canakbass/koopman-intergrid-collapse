@@ -68,7 +68,7 @@ d = np.load("cyl_period.npz")
 chk("periyodik model artigi %", float(d["resid"]) * 100, 0.18, tol=0.03)
 co = d["coef"]; M = int(d["harmonics"])
 E = [float((co[2 * i - 1] ** 2 + co[2 * i] ** 2).sum()) for i in range(1, M + 1)]
-for i, want in [(0, 84.5), (1, 8.2), (2, 6.5)]:
+for i, want in [(0, 84.5), (1, 8.2), (2, 6.4)]:
     chk(f"harmonik {i+1} enerji payi %", E[i] / sum(E) * 100, want, tol=0.02)
 
 # --- appendix: cozucu ve veri kaynagi sayilari

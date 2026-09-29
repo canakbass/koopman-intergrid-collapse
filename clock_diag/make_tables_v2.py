@@ -36,11 +36,15 @@ def node_table(out):
     assert len(rs) == 40, len(rs)
     out.append(r"""\begin{table}[t]
 \centering
-\caption{\textbf{The silent inter-grid failure in a Neural ODE} (five seeds per cell; medians, with
-the range over seeds in brackets). The latent generator is a learned vector field integrated with
-RK4, not a linear Koopman operator, and the failure appears at every rotation number. Training a
-fraction of windows at the second rate (\emph{mixed-rate}) reduces it but does not remove it; the
-Koopman oracle reaches $\mathcal{E}_{1/2}/\mathcal{E}_{\Delta}\approx1$ at the same $\rho$.}
+\caption{\textbf{The inter-grid failure in a Neural ODE} (five seeds per cell; medians, with the
+range over seeds in brackets). $\mathcal{E}_{\Delta}$ and $\mathcal{E}_{1/2}$ are the rollout errors
+at grid and half-step times defined in \cref{sec:probe}. The latent generator is a learned vector
+field integrated with RK4, not a linear Koopman operator. Training a fraction of windows at the
+second rate (\emph{mixed-rate}) reduces the ratio but does not remove it. The Koopman oracle reaches
+$\mathcal{E}_{1/2}/\mathcal{E}_{\Delta}=1.21$, $1.00$ and $0.98$ at $3/8$, $\rho_g$ and $1+\rho_g$;
+at $\rho=1/4$ the oracle itself fails ($284$, \cref{app:rho}), so that row is reported for
+completeness and is \emph{not} evidence of a failure specific to the learned generator --- there the
+Neural ODE is in fact closer to interpolating than the oracle is.}
 \label{tab:node}
 \small
 \setlength{\tabcolsep}{4pt}
@@ -71,9 +75,12 @@ def cyl_table(out):
     out.append(r"""\begin{table}[t]
 \centering
 \caption{\textbf{Cylinder wake at $\mathrm{Re}=100$} (five seeds per cell; medians, range over seeds
-in brackets). The field is the vorticity of a lattice-Boltzmann limit cycle, mean subtracted, so the
-harmonics of the shedding frequency are physical rather than imposed. At both $\rho$ the second and
-third harmonics fold past the Nyquist rate of $\Delta_1$.}
+in brackets). $\mathcal{E}_{\Delta}$ and $\mathcal{E}_{1/2}$ are the rollout errors at grid and
+half-step times defined in \cref{sec:probe}. The field is the vorticity of a lattice-Boltzmann limit
+cycle with its time-average removed, so the harmonics of the shedding frequency are physical rather
+than imposed. At both $\rho$ the second and third harmonics fold past the Nyquist rate of $\Delta_1$.
+Both lifted arms are compared against the oracle in the last row, which is the reference for
+$\mathcal{E}_{1/2}/\mathcal{E}_{\Delta}$.}
 \label{tab:cylinder}
 \small
 \setlength{\tabcolsep}{4pt}
