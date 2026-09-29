@@ -1,0 +1,61 @@
+[{"stream_name":"stdout","time":13.451958489999999,"data":"torch 2.10.0+cu128 cuda True gpus 2 ['Tesla T4', 'Tesla T4']\n"}
+,{"stream_name":"stdout","time":13.454819096,"data":"cyl: T_sim=1010.020 adim, harmonik=8, periyodik model artigi=0.1839%\n"}
+,{"stream_name":"stdout","time":13.454839155,"data":"50 is, 2 GPU x 3 eszamanli\n"}
+,{"stream_name":"stdout","time":157.055867241,"data":"[   144s gpu1] run_cyl.py --model koop --sampling regular --dmd none --omega_mult 0.763932 --seed 0 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":157.133082119,"data":"[   144s gpu0] run_cyl.py --model oracle --sampling regular --dmd none --omega_mult 0.75 --seed 0 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":157.279239793,"data":"[   144s gpu0] run_cyl.py --model koop --sampling mr --dmd mr --omega_mult 0.75 --seed 0 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":157.282785871,"data":"[   144s gpu1] run_cyl.py --model koop --sampling mr --dmd none --omega_mult 0.75 --seed 0 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":157.341717164,"data":"[   144s gpu1] run_cyl.py --model koop --sampling mr --dmd mrg --omega_mult 0.75 --seed 0 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":157.423001502,"data":"[   144s gpu0] run_cyl.py --model koop --sampling regular --dmd none --omega_mult 0.75 --seed 0 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":287.068711572,"data":"[   274s gpu1] run_cyl.py --model oracle --sampling regular --dmd none --omega_mult 0.763932 --seed 0 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":290.186230268,"data":"[   277s gpu1] run_cyl.py --model koop --sampling mr --dmd none --omega_mult 0.75 --seed 1 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":291.157686111,"data":"[   278s gpu1] run_cyl.py --model koop --sampling mr --dmd mr --omega_mult 0.763932 --seed 0 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":291.426130811,"data":"[   278s gpu0] run_cyl.py --model koop --sampling mr --dmd none --omega_mult 0.763932 --seed 0 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":292.05908686,"data":"[   279s gpu0] run_cyl.py --model koop --sampling mr --dmd mrg --omega_mult 0.763932 --seed 0 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":292.583942896,"data":"[   279s gpu0] run_cyl.py --model koop --sampling regular --dmd none --omega_mult 0.75 --seed 1 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":421.264550873,"data":"[   408s gpu0] run_cyl.py --model koop --sampling mr --dmd mr --omega_mult 0.75 --seed 1 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":423.748575257,"data":"[   410s gpu1] run_cyl.py --model koop --sampling mr --dmd mrg --omega_mult 0.75 --seed 1 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":425.888126127,"data":"[   412s gpu1] run_cyl.py --model koop --sampling mr --dmd mr --omega_mult 0.763932 --seed 1 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":427.149280371,"data":"[   414s gpu1] run_cyl.py --model koop --sampling regular --dmd none --omega_mult 0.763932 --seed 1 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":427.497566687,"data":"[   414s gpu0] run_cyl.py --model oracle --sampling regular --dmd none --omega_mult 0.75 --seed 1 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":428.140370129,"data":"[   415s gpu0] run_cyl.py --model koop --sampling mr --dmd none --omega_mult 0.763932 --seed 1 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":555.088080313,"data":"[   542s gpu0] run_cyl.py --model koop --sampling mr --dmd mrg --omega_mult 0.763932 --seed 1 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":555.582521595,"data":"[   542s gpu1] run_cyl.py --model oracle --sampling regular --dmd none --omega_mult 0.763932 --seed 1 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":560.994457888,"data":"[   548s gpu0] run_cyl.py --model koop --sampling regular --dmd none --omega_mult 0.75 --seed 2 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":561.102557845,"data":"[   548s gpu1] run_cyl.py --model koop --sampling mr --dmd mrg --omega_mult 0.75 --seed 2 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":562.438060625,"data":"[   549s gpu0] run_cyl.py --model koop --sampling mr --dmd mr --omega_mult 0.75 --seed 2 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":562.97404113,"data":"[   550s gpu1] run_cyl.py --model koop --sampling mr --dmd none --omega_mult 0.75 --seed 2 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":688.294215395,"data":"[   675s gpu1] run_cyl.py --model koop --sampling regular --dmd none --omega_mult 0.763932 --seed 2 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":690.01668584,"data":"[   677s gpu0] run_cyl.py --model oracle --sampling regular --dmd none --omega_mult 0.75 --seed 2 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":693.117885808,"data":"[   680s gpu1] run_cyl.py --model koop --sampling mr --dmd mr --omega_mult 0.763932 --seed 2 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":695.978262689,"data":"[   683s gpu0] run_cyl.py --model koop --sampling mr --dmd mrg --omega_mult 0.763932 --seed 2 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":696.066012401,"data":"[   683s gpu1] run_cyl.py --model oracle --sampling regular --dmd none --omega_mult 0.763932 --seed 2 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":697.314072132,"data":"[   684s gpu0] run_cyl.py --model koop --sampling mr --dmd none --omega_mult 0.763932 --seed 2 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":823.090021024,"data":"[   810s gpu1] run_cyl.py --model koop --sampling mr --dmd none --omega_mult 0.75 --seed 3 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":824.872216175,"data":"[   811s gpu0] run_cyl.py --model koop --sampling regular --dmd none --omega_mult 0.75 --seed 3 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":826.991515427,"data":"[   814s gpu0] run_cyl.py --model koop --sampling mr --dmd mr --omega_mult 0.75 --seed 3 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":827.59026065,"data":"[   814s gpu1] run_cyl.py --model koop --sampling mr --dmd mrg --omega_mult 0.75 --seed 3 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":829.945171216,"data":"[   816s gpu1] run_cyl.py --model koop --sampling regular --dmd none --omega_mult 0.763932 --seed 3 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":832.011797793,"data":"[   819s gpu0] run_cyl.py --model oracle --sampling regular --dmd none --omega_mult 0.75 --seed 3 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":956.830630137,"data":"[   943s gpu1] run_cyl.py --model koop --sampling mr --dmd mr --omega_mult 0.763932 --seed 3 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":957.490919555,"data":"[   944s gpu0] run_cyl.py --model koop --sampling mr --dmd none --omega_mult 0.763932 --seed 3 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":960.853889201,"data":"[   947s gpu1] run_cyl.py --model oracle --sampling regular --dmd none --omega_mult 0.763932 --seed 3 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":963.39695108,"data":"[   950s gpu0] run_cyl.py --model koop --sampling mr --dmd mrg --omega_mult 0.763932 --seed 3 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":963.843041354,"data":"[   950s gpu0] run_cyl.py --model koop --sampling regular --dmd none --omega_mult 0.75 --seed 4 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":965.771315747,"data":"[   952s gpu1] run_cyl.py --model koop --sampling mr --dmd none --omega_mult 0.75 --seed 4 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":1090.806911174,"data":"[  1077s gpu1] run_cyl.py --model koop --sampling mr --dmd mrg --omega_mult 0.75 --seed 4 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":1092.420180835,"data":"[  1079s gpu0] run_cyl.py --model koop --sampling mr --dmd mr --omega_mult 0.75 --seed 4 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":1095.495086359,"data":"[  1082s gpu1] run_cyl.py --model koop --sampling regular --dmd none --omega_mult 0.763932 --seed 4 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":1095.568178816,"data":"[  1082s gpu0] run_cyl.py --model oracle --sampling regular --dmd none --omega_mult 0.75 --seed 4 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":1097.212664244,"data":"[  1084s gpu0] run_cyl.py --model koop --sampling mr --dmd none --omega_mult 0.763932 --seed 4 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":1097.392073638,"data":"[  1084s gpu1] run_cyl.py --model koop --sampling mr --dmd mr --omega_mult 0.763932 --seed 4 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":1148.118856382,"data":"[  1135s gpu0] run_cyl.py --model koop --sampling mr --dmd mrg --omega_mult 0.763932 --seed 4 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":1148.17656915,"data":"[  1135s gpu1] run_cyl.py --model oracle --sampling regular --dmd none --omega_mult 0.763932 --seed 4 --out results_cyl.jsonl OK\n"}
+,{"stream_name":"stdout","time":1148.181385489,"data":"BITTI\n"}
+,{"stream_name":"stderr","time":1152.000009852,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1152.000097192,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1152.56022803,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1152.560260966,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1153.55793703,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1155.585672392,"data":"[NbConvertApp] Writing 544976 bytes to __results__.html\n"}
+]

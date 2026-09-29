@@ -1,0 +1,28 @@
+[{"stream_name":"stdout","time":6.278304324,"data":"torch 2.10.0+cu128 cuda True gpus 2 ['Tesla T4', 'Tesla T4']\n"}
+,{"stream_name":"stdout","time":6.278915477,"data":"18 is, 2 GPU x 3 eszamanli\n"}
+,{"stream_name":"stdout","time":1430.805465735,"data":"[  1425s gpu0] run.py --model node --sampling mr --omega_mult 0.75 --seed 1 --out results_node_gen_a.jsonl OK\n"}
+,{"stream_name":"stdout","time":1447.436201906,"data":"[  1441s gpu0] run.py --model node --sampling regular --omega_mult 2.763932 --seed 0 --out results_node_gen_a.jsonl OK\n"}
+,{"stream_name":"stdout","time":1448.18143256,"data":"[  1442s gpu1] run.py --model node --sampling mr --omega_mult 0.763932 --seed 1 --out results_node_gen_a.jsonl OK\n"}
+,{"stream_name":"stdout","time":1448.974223172,"data":"[  1443s gpu1] run.py --model node --sampling mr --omega_mult 0.5 --seed 0 --out results_node_gen_a.jsonl OK\n"}
+,{"stream_name":"stdout","time":1453.25580989,"data":"[  1447s gpu1] run.py --model node --sampling regular --omega_mult 0.763932 --seed 0 --out results_node_gen_a.jsonl OK\n"}
+,{"stream_name":"stdout","time":1479.129096192,"data":"[  1473s gpu0] run.py --model node --sampling regular --omega_mult 0.75 --seed 0 --out results_node_gen_a.jsonl OK\n"}
+,{"stream_name":"stdout","time":2923.390786938,"data":"[  2917s gpu0] run.py --model node --sampling mr --omega_mult 2.763932 --seed 1 --out results_node_gen_a.jsonl OK\n"}
+,{"stream_name":"stdout","time":2931.732489516,"data":"[  2925s gpu0] run.py --model node --sampling regular --omega_mult 0.763932 --seed 2 --out results_node_gen_a.jsonl OK\n"}
+,{"stream_name":"stdout","time":2942.0686933,"data":"[  2936s gpu0] run.py --model node --sampling mr --omega_mult 0.5 --seed 2 --out results_node_gen_a.jsonl OK\n"}
+,{"stream_name":"stdout","time":2942.932520931,"data":"[  2937s gpu1] run.py --model node --sampling regular --omega_mult 0.75 --seed 2 --out results_node_gen_a.jsonl OK\n"}
+,{"stream_name":"stdout","time":2944.700232278,"data":"[  2938s gpu1] run.py --model node --sampling regular --omega_mult 2.763932 --seed 2 --out results_node_gen_a.jsonl OK\n"}
+,{"stream_name":"stdout","time":2958.868406679,"data":"[  2953s gpu1] run.py --model node --sampling mr --omega_mult 0.75 --seed 3 --out results_node_gen_a.jsonl OK\n"}
+,{"stream_name":"stdout","time":4362.905449312,"data":"[  4357s gpu1] run.py --model node --sampling regular --omega_mult 0.763932 --seed 4 --out results_node_gen_a.jsonl OK\n"}
+,{"stream_name":"stdout","time":4372.920204867,"data":"[  4367s gpu0] run.py --model node --sampling regular --omega_mult 2.763932 --seed 4 --out results_node_gen_a.jsonl OK\n"}
+,{"stream_name":"stdout","time":4388.098239569,"data":"[  4382s gpu1] run.py --model node --sampling mr --omega_mult 0.5 --seed 4 --out results_node_gen_a.jsonl OK\n"}
+,{"stream_name":"stdout","time":4389.704489326,"data":"[  4383s gpu0] run.py --model node --sampling regular --omega_mult 0.75 --seed 4 --out results_node_gen_a.jsonl OK\n"}
+,{"stream_name":"stdout","time":4391.879459779,"data":"[  4386s gpu0] run.py --model node --sampling mr --omega_mult 0.763932 --seed 3 --out results_node_gen_a.jsonl OK\n"}
+,{"stream_name":"stdout","time":4394.943148264,"data":"[  4389s gpu1] run.py --model node --sampling mr --omega_mult 2.763932 --seed 3 --out results_node_gen_a.jsonl OK\n"}
+,{"stream_name":"stdout","time":4394.946931124,"data":"BITTI\n"}
+,{"stream_name":"stderr","time":4397.317735833,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":4397.317789549,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":4397.564312577,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":4397.564355412,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":4398.178052086,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":4399.347211832,"data":"[NbConvertApp] Writing 346537 bytes to __results__.html\n"}
+]

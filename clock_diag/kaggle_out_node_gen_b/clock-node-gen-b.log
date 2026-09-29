@@ -1,0 +1,27 @@
+[{"stream_name":"stdout","time":6.718990565,"data":"torch 2.10.0+cu128 cuda True gpus 2 ['Tesla T4', 'Tesla T4']\n"}
+,{"stream_name":"stdout","time":6.719055945,"data":"17 is, 2 GPU x 3 eszamanli\n"}
+,{"stream_name":"stdout","time":1535.832442228,"data":"[  1529s gpu1] run.py --model node --sampling regular --omega_mult 2.763932 --seed 1 --out results_node_gen_b.jsonl OK\n"}
+,{"stream_name":"stdout","time":1538.205207245,"data":"[  1531s gpu0] run.py --model node --sampling mr --omega_mult 2.763932 --seed 0 --out results_node_gen_b.jsonl OK\n"}
+,{"stream_name":"stdout","time":1538.49454792,"data":"[  1532s gpu0] run.py --model node --sampling mr --omega_mult 0.75 --seed 0 --out results_node_gen_b.jsonl OK\n"}
+,{"stream_name":"stdout","time":1549.974373263,"data":"[  1543s gpu1] run.py --model node --sampling mr --omega_mult 0.763932 --seed 0 --out results_node_gen_b.jsonl OK\n"}
+,{"stream_name":"stdout","time":1560.687566109,"data":"[  1554s gpu1] run.py --model node --sampling regular --omega_mult 0.75 --seed 1 --out results_node_gen_b.jsonl OK\n"}
+,{"stream_name":"stdout","time":1592.061051003,"data":"[  1585s gpu0] run.py --model node --sampling regular --omega_mult 0.763932 --seed 1 --out results_node_gen_b.jsonl OK\n"}
+,{"stream_name":"stdout","time":3060.192919967,"data":"[  3053s gpu1] run.py --model node --sampling mr --omega_mult 0.75 --seed 2 --out results_node_gen_b.jsonl OK\n"}
+,{"stream_name":"stdout","time":3063.317701671,"data":"[  3057s gpu0] run.py --model node --sampling mr --omega_mult 0.763932 --seed 2 --out results_node_gen_b.jsonl OK\n"}
+,{"stream_name":"stdout","time":3091.010629013,"data":"[  3084s gpu1] run.py --model node --sampling mr --omega_mult 2.763932 --seed 2 --out results_node_gen_b.jsonl OK\n"}
+,{"stream_name":"stdout","time":3108.889116196,"data":"[  3102s gpu0] run.py --model node --sampling mr --omega_mult 0.5 --seed 1 --out results_node_gen_b.jsonl OK\n"}
+,{"stream_name":"stdout","time":3114.524477108,"data":"[  3108s gpu1] run.py --model node --sampling regular --omega_mult 0.763932 --seed 3 --out results_node_gen_b.jsonl OK\n"}
+,{"stream_name":"stdout","time":3129.014644061,"data":"[  3122s gpu0] run.py --model node --sampling regular --omega_mult 0.75 --seed 3 --out results_node_gen_b.jsonl OK\n"}
+,{"stream_name":"stdout","time":4339.572535358,"data":"[  4333s gpu1] run.py --model node --sampling mr --omega_mult 0.5 --seed 3 --out results_node_gen_b.jsonl OK\n"}
+,{"stream_name":"stdout","time":4358.714163066,"data":"[  4352s gpu0] run.py --model node --sampling regular --omega_mult 2.763932 --seed 3 --out results_node_gen_b.jsonl OK\n"}
+,{"stream_name":"stdout","time":4367.935346738,"data":"[  4361s gpu0] run.py --model node --sampling mr --omega_mult 0.75 --seed 4 --out results_node_gen_b.jsonl OK\n"}
+,{"stream_name":"stdout","time":4383.925777926,"data":"[  4377s gpu0] run.py --model node --sampling mr --omega_mult 2.763932 --seed 4 --out results_node_gen_b.jsonl OK\n"}
+,{"stream_name":"stdout","time":4388.04339064,"data":"[  4381s gpu1] run.py --model node --sampling mr --omega_mult 0.763932 --seed 4 --out results_node_gen_b.jsonl OK\n"}
+,{"stream_name":"stdout","time":4388.047627046,"data":"BITTI\n"}
+,{"stream_name":"stderr","time":4390.735609643,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":4390.735672029,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":4391.007463601,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":4391.007492421,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":4391.667889189,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":4393.025100379,"data":"[NbConvertApp] Writing 345770 bytes to __results__.html\n"}
+]
