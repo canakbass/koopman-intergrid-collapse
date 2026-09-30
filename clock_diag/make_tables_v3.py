@@ -10,7 +10,7 @@ by a factor of three to five.
 import json, os, statistics as st, sys
 
 m = st.median
-RHO = {0.75: r"$3/8$", 0.763932: r"$\rho_g$", 2.763932: r"$1+\rho_g$"}
+RHO = {0.75: r"$3/8$", 0.763932: r"$\rho_g$", 2.763932: r"$1+\rho_g$", 0.707107: r"$\sqrt2/4$"}
 MODES = [("regular", "regular"), ("j5", r"jitter $\pm0.05$"), ("j20", r"jitter $\pm0.20$"), ("exp", "exponential")]
 
 
@@ -68,8 +68,8 @@ $\rho$ & training times & ratio & $f_{\text{true}}$ & ratio & $f_{\text{true}}$ 
 
 
 def qp_table(out):
-    rs = load("kaggle_out_qp/results_qp.jsonl")
-    assert len(rs) == 50
+    rs = load("kaggle_out_qp3/results_qp3.jsonl")
+    assert len(rs) == 75
     arms = [(("koop", "regular", "none"), "regular, no lift"),
             (("koop", "mr", "none"), "mixed-rate control"),
             (("koop", "mr", "mr"), "multi-rate lift"),
@@ -77,17 +77,16 @@ def qp_table(out):
             (("oracle", "regular", "none"), "mean-frequency reference")]
     out.append(r"""\begin{table}[t]
 \centering
-\caption{\textbf{A quasi-periodic system: the failure survives and the gate carries the repair}
-(medians over five seeds). \emph{Read the absolute columns, not the ratio}: the gate-free lift is
-level with the control on $\Eoff{1/2}$ while its ratio is three times larger, because lifting
-improves $\Eoff{0}$ by a factor of $2.6$ and shrinks the denominator. The gated arm is the best
-learned arm here on every absolute measure. The glyph's phase is $\theta_0+\omega t+A\sin(\nu t)$ with $\nu/\omega$
-irrational, so the trajectory never repeats and the instantaneous angular velocity varies by
-$\pm31\%$. The spectrum is still a point spectrum, at the combination frequencies $m\omega+k\nu$
-rather than on a harmonic ladder, so a linear generator exists in principle; what the models here
-do not have is enough modes for it ($10$--$17$ carry $90\%$ of the oscillating
-energy depending on the glyph, against four oscillators). The last row is not an oracle but a reference initialised at the mean frequency, and
-it is the worst arm in the table, which is why no ``oracle level'' anchors this table.}
+\caption{\textbf{A quasi-periodic system: the failure survives, and the gate's benefit is its
+abstention rate} (medians over five seeds). Phase $\theta_0+\omega t+A\sin(\nu t)$ with
+$\nu/\omega=(\sqrt5-1)/2$, so the spectrum is a lattice of combination frequencies $m\omega+k\nu$.
+\emph{Read the absolute columns, not the ratio}: lifting improves $\Eoff{0}$ and so inflates its own
+ratio. The three rotation numbers differ only in how often the gate finds a mode it can certify
+--- $5/5$, $3/5$ and $1/5$ runs --- and the gain tracks that exactly, since an abstention leaves the
+control in place. $\rho_g$ is the degenerate case: with $\nu/\omega=G$ and $\rho_g=G^2$ the mode
+lattice collapses from $104$ candidates to $32$ distinct aliases (\cref{app:generality}), which is
+why a certifiable mode is always available there. The last row is a reference initialised at the
+mean frequency, not an oracle, and it is the worst arm at every $\rho$.}
 \label{tab:qp}
 \footnotesize
 \setlength{\tabcolsep}{4.5pt}
@@ -95,7 +94,7 @@ it is the worst arm in the table, which is why no ``oracle level'' anchors this 
 \toprule
 $\rho$ & arm & $\Eoff{1/2}/\Eoff{0}$ & $\kappa$ & $f_{\text{true}}$ & gate \\
 \midrule""")
-    for w in (0.75, 0.763932):
+    for w in (0.75, 0.763932, 0.707107):
         for i, (key, lab) in enumerate(arms):
             v = [r for r in rs if (r["model"], r["sampling"], r["dmd"]) == key and r["omega_mult"] == w]
             r_, f_, k_ = cell(v)
@@ -107,7 +106,7 @@ $\rho$ & arm & $\Eoff{1/2}/\Eoff{0}$ & $\kappa$ & $f_{\text{true}}$ & gate \\
                 g = "--"
             pre = r"\multirow{5}{*}{" + RHO[w] + "}" if i == 0 else ""
             out.append(f"{pre} & {lab} & {r_} & {k_} & {f_} & {g} \\\\")
-        out.append(r"\midrule" if w == 0.75 else r"\bottomrule")
+        out.append(r"\midrule" if w != 0.707107 else r"\bottomrule")
     out.append("\\end{tabular}\n\\end{table}")
 
 
@@ -143,7 +142,7 @@ $\rho$ & arm & $n_{\text{osc}}$ & $\Eoff{0}$ & $\Eoff{1/2}$ & ratio \\
                 out.append(f"{pre} & {nm} & ${n}$ & ${sci(m([r['E_grid'] for r in v]))}$ & "
                            f"${sci(m([r['E_mid'] for r in v]))}$ & ${num(m([r['mid_over_grid'] for r in v]))}$ \\\\")
             if i < 2: out.append(r"\cmidrule(lr){2-6}")
-        out.append(r"\midrule" if w == 0.75 else r"\bottomrule")
+        out.append(r"\midrule" if w != 0.707107 else r"\bottomrule")
     out.append("\\end{tabular}\n\\end{table}")
 
 

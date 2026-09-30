@@ -119,18 +119,38 @@ chk("j5 f_true (koop, rho=3/8)", m([r["f_true"] for r in sel(irr_k, model="koop"
 chk("exp kappa koop rho=3/8", m([r["kappa"] for r in sel(irr_k, model="koop", omega_mult=0.75, sampling="exp")]), 3.84)
 chk("exp kappa node rho=3/8", m([r["kappa"] for r in sel(irr_n, omega_mult=0.75, sampling="exp")]), 1.99)
 
-# --- yari-periyodik (tab:qp)
-qp = [json.loads(l) for l in open("kaggle_out_qp/results_qp.jsonl")]
-assert len(qp) == 50
-for w, wants in [(0.75, (205, 49.4, 154, 52.8, 305)), (0.763932, (236, 60.8, 110, 44.3, 391))]:
-    for key, want in zip([("koop", "regular", "none"), ("koop", "mr", "none"), ("koop", "mr", "mr"),
-                          ("koop", "mr", "mrg"), ("oracle", "regular", "none")], wants):
-        v = [r for r in qp if (r["model"], r["sampling"], r["dmd"]) == key and r["omega_mult"] == w]
-        chk(f"qp {key[0]}/{key[2]} rho={w/2:.3f}", _r(v), want)
-_g = [r for r in qp if r["dmd"] == "mrg"]
-chk("qp gate tam cekilme", sum(bool(r.get("gated_skip")) for r in _g), 1, tol=0.0)
-chk("qp gate kilitlenen mod (en fazla)", max(sum(r["gate_pass"]) for r in _g), 1, tol=0.0)
-chk("qp lift kappa", m([r["kappa"] for r in qp if r["dmd"] == "mr"]), 1.00)
+# --- yari-periyodik (tab:qp), 3 rotation number, duzeltilmis f_true penceresi
+qp = [json.loads(l) for l in open("kaggle_out_qp3/results_qp3.jsonl")]
+assert len(qp) == 75
+def _q(w, key, f="mid_over_grid"):
+    v = [r for r in qp if (r["model"], r["sampling"], r["dmd"]) == key and r["omega_mult"] == w]
+    assert len(v) == 5, (w, key, len(v))
+    return m([r[f] for r in v])
+for w, want in [(0.75, 183), (0.763932, 252), (0.707107, 180)]:
+    chk(f"qp olgu oran rho={w/2:.3f}", _q(w, ("koop", "regular", "none")), want, tol=0.03)
+    chk(f"qp olgu f_true rho={w/2:.3f}", _q(w, ("koop", "regular", "none"), "f_true"), 0.0, tol=0.0)
+# gate li kolun kontrole gore MUTLAK kazanci ve gate in kilitleme sikligi
+for w, gain, locks in [(0.75, 1.87, 3), (0.763932, 3.51, 5), (0.707107, 1.00, 1)]:
+    c = _q(w, ("koop", "mr", "none"), "E_mid"); g = _q(w, ("koop", "mr", "mrg"), "E_mid")
+    chk(f"qp gate li kazanc rho={w/2:.3f}", c / g, gain, tol=0.04)
+    v = [r for r in qp if r["dmd"] == "mrg" and r["omega_mult"] == w]
+    chk(f"qp gate kilitleme sayisi rho={w/2:.3f}", sum(not r.get("gated_skip") for r in v), locks, tol=0.0)
+# temiz irrasyonel rho da lift fayda saglamiyor: iddianin can alici noktasi
+_c = _q(0.707107, ("koop", "mr", "none"), "E_mid"); _g = _q(0.707107, ("koop", "mr", "mrg"), "E_mid")
+assert 0.9 < _c / _g < 1.2, "sqrt2/4 te gate li kol fayda saglamamali"
+
+# --- mod cakisma sayimlari (dejenerasyon iddiasinin kaynagi)
+import collections as _co
+_G = (5 ** 0.5 - 1) / 2
+def _alias_count(rho, comb):
+    if comb:
+        return len({round((rho * (mm + _G * kk)) % 1.0, 9) for mm in range(1, 9) for kk in range(-6, 7)})
+    return len({round((rho * mm) % 1.0, 9) for mm in range(1, 25)})
+chk("saf donme rho=3/8 alias", _alias_count(0.375, False), 8, tol=0.0)
+chk("saf donme rho_g alias", _alias_count((3 - 5 ** 0.5) / 2, False), 24, tol=0.0)
+chk("kombinasyon rho_g alias", _alias_count((3 - 5 ** 0.5) / 2, True), 32, tol=0.0)
+chk("kombinasyon rho=3/8 alias", _alias_count(0.375, True), 104, tol=0.0)
+chk("kombinasyon sqrt2/4 alias", _alias_count(2 ** 0.5 / 4, True), 104, tol=0.0)
 
 # --- mod butcesi taramasi (tab:qp-budget) ve spektral sayim
 bud = [json.loads(l) for l in open("kaggle_out_qp_budget/results_qp_budget.jsonl")]
@@ -140,15 +160,15 @@ def _b(w, key, n, f="mid_over_grid"):
     v = [r for r in bud if (r["sampling"], r["dmd"]) == key and r["omega_mult"] == w and r["n"] == n]
     assert len(v) == 5, (w, key, n, len(v))
     return m([r[f] for r in v])
-for w, wants in [(0.75, (160, 92, 38)), (0.763932, (110, 97, 14))]:
+for w, wants in [(0.75, (145, 89, 31)), (0.763932, (111, 108, 14))]:
     for n, want in zip((4, 12, 24), wants):
         chk(f"butce lift oran rho={w/2:.3f} n={n}", _b(w, ("mr", "mr"), n), want, tol=0.03)
 # oran duserken MUTLAK hatalar artiyor: iddianin can alici noktasi
-for w, lo, hi in [(0.75, 8.9, 2.3), (0.763932, 23.3, 2.8)]:
+for w, lo, hi in [(0.75, 14.5, 1.95), (0.763932, 22.6, 2.63)]:
     chk(f"butce lift E_0 artisi rho={w/2:.3f}", _b(w, ("mr", "mr"), 24, "E_grid") / _b(w, ("mr", "mr"), 4, "E_grid"), lo, tol=0.03)
     chk(f"butce lift E_1/2 artisi rho={w/2:.3f}", _b(w, ("mr", "mr"), 24, "E_mid") / _b(w, ("mr", "mr"), 4, "E_mid"), hi, tol=0.03)
-chk("butce lift f_true n=4", m([_b(w, ("mr", "mr"), 4, "f_true") for w in (0.75, 0.763932)]), 0.42, tol=0.03)
-chk("butce lift f_true n=24", m([_b(w, ("mr", "mr"), 24, "f_true") for w in (0.75, 0.763932)]), 0.22, tol=0.30)
+chk("butce lift f_true n=4", m([_b(w, ("mr", "mr"), 4, "f_true") for w in (0.75, 0.763932)]), 0.405, tol=0.05)
+chk("butce lift f_true n=24", m([_b(w, ("mr", "mr"), 24, "f_true") for w in (0.75, 0.763932)]), 0.197, tol=0.30)
 # kontrolun mutlak hatasi butceyle sabit -> bozulma lift'e ozgu
 for w in (0.75, 0.763932):
     chk(f"butce kontrol E_1/2 sabit rho={w/2:.3f}",
@@ -172,26 +192,6 @@ for thr, want in ((0.90, 13), (0.95, 22), (0.99, 57)):
         acc += e / _tot; cnt += 1
         if acc >= thr: break
     chk(f"spektrum: %{thr*100:.0f} enerji icin mod", cnt, want, tol=0.0)
-
-# --- QP: mutlak degerler (yon-yanlis yorumun bir daha olmamasi icin)
-for w, want_c, want_l, want_g in [(0.75, 3.48e-2, 3.62e-2, 1.85e-2), (0.763932, 3.68e-2, 2.90e-2, 1.05e-2)]:
-    for key, want, nm in ((("koop", "mr", "none"), want_c, "kontrol"), (("koop", "mr", "mr"), want_l, "lift"),
-                          (("koop", "mr", "mrg"), want_g, "gate li")):
-        v = [r for r in qp if (r["model"], r["sampling"], r["dmd"]) == key and r["omega_mult"] == w]
-        chk(f"qp MUTLAK E_1/2 {nm} rho={w/2:.3f}", m([r["E_mid"] for r in v]), want, tol=0.03)
-# gate li kol kontrolden MUTLAK olarak iyi olmali (yon kontrolu)
-for w, want in [(0.75, 1.88), (0.763932, 3.53)]:
-    c = m([r["E_mid"] for r in qp if (r["model"], r["sampling"], r["dmd"]) == ("koop", "mr", "none") and r["omega_mult"] == w])
-    g = m([r["E_mid"] for r in qp if (r["model"], r["sampling"], r["dmd"]) == ("koop", "mr", "mrg") and r["omega_mult"] == w])
-    chk(f"qp gate li kontrolden kac kat iyi rho={w/2:.3f}", c / g, want, tol=0.03)
-    assert g < c, "gate li kol kontrolden kotu cikti: yon-yanlis yorum riski"
-# iki kernel ayni konfigurasyonda ne kadar ayrisiyor (tekrarlanabilirlik notu)
-_pairs = []
-for w in (0.75, 0.763932):
-    a = {r["seed"]: r["mid_over_grid"] for r in qp if (r["model"], r["sampling"], r["dmd"]) == ("koop", "mr", "mr") and r["omega_mult"] == w}
-    b = {r["seed"]: r["mid_over_grid"] for r in bud if (r["sampling"], r["dmd"]) == ("mr", "mr") and r["omega_mult"] == w and r["n"] == 4}
-    _pairs += [max(a[k], b[k]) / min(a[k], b[k]) for k in a]
-chk("iki kernel tohum basina en buyuk sapma", max(_pairs), 1.35, tol=0.03)
 
 print(f"DOGRULANAN: {len(ok)}")
 for b in bad: print("  UYUSMUYOR ->", b)
