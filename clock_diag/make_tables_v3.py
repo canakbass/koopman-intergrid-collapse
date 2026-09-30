@@ -29,7 +29,7 @@ def cell(v):
 
 def irr_table(out):
     reg = load("results_merged2.jsonl")
-    irr_k = load("kaggle_out_irr_koop2/results_irr_koop.jsonl")
+    irr_k = load("kaggle_out_irr_koop/results_irr_koop.jsonl")
     irr_n = load("kaggle_out_irr_node/results_irr_node.jsonl")
     node_reg = [r for p in ("kaggle_out_node_gen/results_node_gen_a.jsonl",
                             "kaggle_out_node_gen_b/results_node_gen_b.jsonl") for r in load(p)]
@@ -79,10 +79,12 @@ def qp_table(out):
 \centering
 \caption{\textbf{A quasi-periodic system: the failure survives, the repair does not}
 (medians over five seeds). The glyph's phase is $\theta_0+\omega t+A\sin(\nu t)$ with $\nu/\omega$
-irrational, so the trajectory never repeats, the instantaneous angular velocity varies by $\pm31\%$,
-and the spectrum is a set of Bessel sidebands rather than a harmonic ladder. There is no oracle
-here: no single linear generator reproduces this motion, and the last row is a reference
-initialised at the mean frequency, not a ceiling --- it is the worst arm in the table.}
+irrational, so the trajectory never repeats and the instantaneous angular velocity varies by
+$\pm31\%$. The spectrum is still a point spectrum, at the combination frequencies $m\omega+k\nu$
+rather than on a harmonic ladder, so a linear generator exists in principle; what the models here
+do not have is enough modes for it ($13$ carry $90\%$ of the oscillating energy, against four
+oscillators). The last row is not an oracle but a reference initialised at the mean frequency, and
+it is the worst arm in the table, which is why no ``oracle level'' anchors this table.}
 \label{tab:qp}
 \footnotesize
 \setlength{\tabcolsep}{4.5pt}
@@ -106,10 +108,50 @@ $\rho$ & arm & $\Eoff{1/2}/\Eoff{0}$ & $\kappa$ & $f_{\text{true}}$ & gate \\
     out.append("\\end{tabular}\n\\end{table}")
 
 
+def budget_table(out):
+    rs = load("kaggle_out_qp_budget/results_qp_budget.jsonl")
+    assert len(rs) == 90, len(rs)
+    for r in rs: r["n"] = len(r["learned_omegas"])
+    arms = [(("regular", "none"), "regular, no lift"), (("mr", "none"), "mixed-rate control"),
+            (("mr", "mr"), "multi-rate lift")]
+    out.append(r"""\begin{table}[t]
+\centering
+\caption{\textbf{Enlarging the oscillator budget does not repair the lift on the quasi-periodic
+system} (medians over five seeds). The observable needs $13$ modes for $90\%$ of its oscillating
+energy and the models of \cref{tab:qp} carry four, so capacity is a candidate explanation for the
+failure of the repair there. It does not survive the test: the ratio falls with the budget, but only
+because $\Eoff{0}$ degrades faster than $\Eoff{1/2}$ --- both absolute errors get worse and
+$f_{\text{true}}$ falls with them. The control's absolute error is flat across the budget, so this
+is specific to the lift rather than a general effect of model size at a fixed iteration count.}
+\label{tab:qp-budget}
+\footnotesize
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{llcccc}
+\toprule
+$\rho$ & arm & $n_{\text{osc}}$ & $\Eoff{0}$ & $\Eoff{1/2}$ & ratio \\
+\midrule""")
+    for w in (0.75, 0.763932):
+        for i, (key, lab) in enumerate(arms):
+            for j, n in enumerate((4, 12, 24)):
+                v = [r for r in rs if (r["sampling"], r["dmd"]) == key and r["omega_mult"] == w and r["n"] == n]
+                assert len(v) == 5
+                nm = lab if j == 0 else ""
+                pre = r"\multirow{9}{*}{" + RHO[w] + "}" if (i == 0 and j == 0) else ""
+                out.append(f"{pre} & {nm} & ${n}$ & ${sci(m([r['E_grid'] for r in v]))}$ & "
+                           f"${sci(m([r['E_mid'] for r in v]))}$ & ${num(m([r['mid_over_grid'] for r in v]))}$ \\\\")
+            if i < 2: out.append(r"\cmidrule(lr){2-6}")
+        out.append(r"\midrule" if w == 0.75 else r"\bottomrule")
+    out.append("\\end{tabular}\n\\end{table}")
+
+
+def sci(x):
+    return f"{x:.0e}".replace("e-0", "e-").replace("e-", r"\text{e-}")
+
+
 if __name__ == "__main__":
     dest = sys.argv[1] if len(sys.argv) > 1 else "."
     hdr = "% Bu dosya make_tables_v3.py tarafindan ham jsonl'den uretilir; elle duzenleme."
-    for fn, build in (("table_irregular", irr_table), ("table_qp", qp_table)):
+    for fn, build in (("table_irregular", irr_table), ("table_qp", qp_table), ("table_qp_budget", budget_table)):
         o = [hdr]; build(o)
         with open(os.path.join(dest, fn + ".tex"), "w") as f: f.write("\n".join(o) + "\n")
         print("yazildi:", fn + ".tex")

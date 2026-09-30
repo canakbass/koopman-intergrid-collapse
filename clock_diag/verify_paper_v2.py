@@ -132,6 +132,47 @@ chk("qp gate tam cekilme", sum(bool(r.get("gated_skip")) for r in _g), 1, tol=0.
 chk("qp gate kilitlenen mod (en fazla)", max(sum(r["gate_pass"]) for r in _g), 1, tol=0.0)
 chk("qp lift kappa", m([r["kappa"] for r in qp if r["dmd"] == "mr"]), 1.00)
 
+# --- mod butcesi taramasi (tab:qp-budget) ve spektral sayim
+bud = [json.loads(l) for l in open("kaggle_out_qp_budget/results_qp_budget.jsonl")]
+assert len(bud) == 90
+for r in bud: r["n"] = len(r["learned_omegas"])
+def _b(w, key, n, f="mid_over_grid"):
+    v = [r for r in bud if (r["sampling"], r["dmd"]) == key and r["omega_mult"] == w and r["n"] == n]
+    assert len(v) == 5, (w, key, n, len(v))
+    return m([r[f] for r in v])
+for w, wants in [(0.75, (160, 92, 38)), (0.763932, (110, 97, 14))]:
+    for n, want in zip((4, 12, 24), wants):
+        chk(f"butce lift oran rho={w/2:.3f} n={n}", _b(w, ("mr", "mr"), n), want, tol=0.03)
+# oran duserken MUTLAK hatalar artiyor: iddianin can alici noktasi
+for w, lo, hi in [(0.75, 8.9, 2.3), (0.763932, 23.3, 2.8)]:
+    chk(f"butce lift E_0 artisi rho={w/2:.3f}", _b(w, ("mr", "mr"), 24, "E_grid") / _b(w, ("mr", "mr"), 4, "E_grid"), lo, tol=0.03)
+    chk(f"butce lift E_1/2 artisi rho={w/2:.3f}", _b(w, ("mr", "mr"), 24, "E_mid") / _b(w, ("mr", "mr"), 4, "E_mid"), hi, tol=0.03)
+chk("butce lift f_true n=4", m([_b(w, ("mr", "mr"), 4, "f_true") for w in (0.75, 0.763932)]), 0.42, tol=0.03)
+chk("butce lift f_true n=24", m([_b(w, ("mr", "mr"), 24, "f_true") for w in (0.75, 0.763932)]), 0.22, tol=0.30)
+# kontrolun mutlak hatasi butceyle sabit -> bozulma lift'e ozgu
+for w in (0.75, 0.763932):
+    chk(f"butce kontrol E_1/2 sabit rho={w/2:.3f}",
+        _b(w, ("mr", "none"), 24, "E_mid") / _b(w, ("mr", "none"), 4, "E_mid"), 1.0, tol=0.10)
+
+# --- spektral mod sayimi (Jacobi-Anger + Bessel genlikleri)
+import math as _math, numpy as _np, torch as _torch
+import data as _data, data_qp as _dqp
+def _Jk(k, x, N=4096):
+    tau = _np.linspace(0, 2 * _np.pi, N, endpoint=False)
+    return float(_np.mean(_np.cos(k * tau - x * _np.sin(tau))))
+_NT = 1024
+_ang = _torch.arange(_NT, dtype=_torch.float32) * (2 * _math.pi / _NT)
+_X = _data.render(_torch.zeros(_NT, dtype=_torch.long, device=_data.DEV), _ang.to(_data.DEV))[:, 0].reshape(_NT, -1).cpu().numpy()
+_Em = (_np.abs(_np.fft.rfft(_X, axis=0) / _NT) ** 2).sum(1)
+_rows = sorted((_Em[mm] * _Jk(kk, mm * _dqp.A) ** 2 for mm in range(1, 25) for kk in range(-12, 13)), reverse=True)
+_tot = sum(_rows)
+for thr, want in ((0.90, 13), (0.95, 22), (0.99, 57)):
+    acc = 0; cnt = 0
+    for e in _rows:
+        acc += e / _tot; cnt += 1
+        if acc >= thr: break
+    chk(f"spektrum: %{thr*100:.0f} enerji icin mod", cnt, want, tol=0.0)
+
 print(f"DOGRULANAN: {len(ok)}")
 for b in bad: print("  UYUSMUYOR ->", b)
 print("SONUC:", "hepsi tutuyor" if not bad else f"{len(bad)} UYUSMAZLIK")
