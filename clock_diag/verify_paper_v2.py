@@ -92,6 +92,46 @@ chk("midpoint-only oran, en kucuk", _v[0], 239, tol=0.01)
 chk("midpoint-only oran, en buyuk", _v[-1], 331, tol=0.01)
 chk("midpoint-only oran, medyan", m([r["mid_over_grid"] for r in orc14]), 284, tol=0.01)
 
+# --- ornekleme merdiveni (tab:irregular)
+irr_k = [json.loads(l) for l in open("kaggle_out_irr_koop/results_irr_koop.jsonl")]
+irr_n = [json.loads(l) for l in open("kaggle_out_irr_node/results_irr_node.jsonl")]
+assert len(irr_k) == 90 and len(irr_n) == 30
+mg2 = [json.loads(l) for l in open("results_merged2.jsonl")]
+node_reg = [json.loads(l) for p2 in ("kaggle_out_node_gen/results_node_gen_a.jsonl",
+                                     "kaggle_out_node_gen_b/results_node_gen_b.jsonl") for l in open(p2)]
+def _r(rs): return m([x["mid_over_grid"] for x in rs])
+for w, want in [(0.75, 109), (0.763932, 147), (2.763932, 172)]:     # regular, YALNIZ init=small
+    v = [r for r in mg2 if r["model"] == "koop" and r["omega_mult"] == w and r["sampling"] == "regular"
+         and r.get("init") == "small" and r.get("variant") == "base"]
+    chk(f"merdiven koop regular rho={w/2:.3f}", _r(v), want)
+for w, wants in [(0.75, (79.3, 12.0, 0.97)), (0.763932, (64.0, 13.2, 0.98)), (2.763932, (23.5, 16.5, 1.06))]:
+    for mode, want in zip(("j5", "j20", "exp"), wants):
+        chk(f"merdiven koop {mode} rho={w/2:.3f}", _r(sel(irr_k, model="koop", omega_mult=w, sampling=mode)), want)
+for w, wants in [(0.75, (102, 4.90, 1.01)), (0.763932, (103, 7.63, 1.00))]:
+    for mode, want in zip(("j5", "j20", "exp"), wants):
+        chk(f"merdiven node {mode} rho={w/2:.3f}", _r(sel(irr_n, omega_mult=w, sampling=mode)), want)
+for w, want in [(0.75, 272), (0.763932, 339), (2.763932, 74.1)]:
+    chk(f"merdiven node regular rho={w/2:.3f}", _r(sel(node_reg, omega_mult=w, sampling="regular")), want)
+_o = [r["mid_over_grid"] for r in irr_k if r["model"] == "oracle"]
+chk("oracle duzensizde en kotu", max(_o), 1.06, tol=0.10)
+chk("oracle duzensizde kappa", m([r["kappa"] for r in irr_k if r["model"] == "oracle"]), 1.00)
+chk("j5 f_true (koop, rho=3/8)", m([r["f_true"] for r in sel(irr_k, model="koop", omega_mult=0.75, sampling="j5")]), 0.0, tol=0.0)
+chk("exp kappa koop rho=3/8", m([r["kappa"] for r in sel(irr_k, model="koop", omega_mult=0.75, sampling="exp")]), 3.84)
+chk("exp kappa node rho=3/8", m([r["kappa"] for r in sel(irr_n, omega_mult=0.75, sampling="exp")]), 1.99)
+
+# --- yari-periyodik (tab:qp)
+qp = [json.loads(l) for l in open("kaggle_out_qp/results_qp.jsonl")]
+assert len(qp) == 50
+for w, wants in [(0.75, (205, 49.4, 154, 52.8, 305)), (0.763932, (236, 60.8, 110, 44.3, 391))]:
+    for key, want in zip([("koop", "regular", "none"), ("koop", "mr", "none"), ("koop", "mr", "mr"),
+                          ("koop", "mr", "mrg"), ("oracle", "regular", "none")], wants):
+        v = [r for r in qp if (r["model"], r["sampling"], r["dmd"]) == key and r["omega_mult"] == w]
+        chk(f"qp {key[0]}/{key[2]} rho={w/2:.3f}", _r(v), want)
+_g = [r for r in qp if r["dmd"] == "mrg"]
+chk("qp gate tam cekilme", sum(bool(r.get("gated_skip")) for r in _g), 1, tol=0.0)
+chk("qp gate kilitlenen mod (en fazla)", max(sum(r["gate_pass"]) for r in _g), 1, tol=0.0)
+chk("qp lift kappa", m([r["kappa"] for r in qp if r["dmd"] == "mr"]), 1.00)
+
 print(f"DOGRULANAN: {len(ok)}")
 for b in bad: print("  UYUSMUYOR ->", b)
 print("SONUC:", "hepsi tutuyor" if not bad else f"{len(bad)} UYUSMAZLIK")

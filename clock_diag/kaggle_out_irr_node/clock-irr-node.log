@@ -1,0 +1,40 @@
+[{"stream_name":"stdout","time":7.614136867,"data":"torch 2.10.0+cu128 cuda True gpus 2 ['Tesla T4', 'Tesla T4']\n"}
+,{"stream_name":"stdout","time":7.614191238,"data":"30 is, 2 GPU x 3 eszamanli\n"}
+,{"stream_name":"stdout","time":1725.843998578,"data":"[  1718s gpu0] run.py --model node --sampling j5 --omega_mult 0.75 --seed 0 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":1730.342799334,"data":"[  1723s gpu1] run.py --model node --sampling j5 --omega_mult 0.763932 --seed 0 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":2108.844690009,"data":"[  2101s gpu0] run.py --model node --sampling j20 --omega_mult 0.75 --seed 0 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":2122.502216099,"data":"[  2115s gpu1] run.py --model node --sampling j20 --omega_mult 0.763932 --seed 0 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":3470.05638859,"data":"[  3462s gpu0] run.py --model node --sampling j5 --omega_mult 0.75 --seed 1 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":3470.562645232,"data":"[  3463s gpu1] run.py --model node --sampling j5 --omega_mult 0.763932 --seed 1 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":4169.369872911,"data":"[  4162s gpu1] run.py --model node --sampling j20 --omega_mult 0.763932 --seed 1 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":4201.192867825,"data":"[  4194s gpu0] run.py --model node --sampling j20 --omega_mult 0.75 --seed 1 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":4365.319126307,"data":"[  4358s gpu0] run.py --model node --sampling exp --omega_mult 0.75 --seed 0 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":4389.964806237,"data":"[  4382s gpu1] run.py --model node --sampling exp --omega_mult 0.763932 --seed 0 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":5855.15808795,"data":"[  5848s gpu0] run.py --model node --sampling j5 --omega_mult 0.75 --seed 2 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":5899.389241165,"data":"[  5892s gpu1] run.py --model node --sampling j5 --omega_mult 0.763932 --seed 2 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":6338.522395739,"data":"[  6331s gpu0] run.py --model node --sampling j20 --omega_mult 0.75 --seed 2 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":6359.669896014,"data":"[  6352s gpu1] run.py --model node --sampling j20 --omega_mult 0.763932 --seed 2 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":7687.04834059,"data":"[  7679s gpu1] run.py --model node --sampling exp --omega_mult 0.763932 --seed 1 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":7745.745539153,"data":"[  7738s gpu0] run.py --model node --sampling exp --omega_mult 0.75 --seed 1 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":8023.709474628,"data":"[  8016s gpu0] run.py --model node --sampling j5 --omega_mult 0.75 --seed 3 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":8061.962945015,"data":"[  8054s gpu1] run.py --model node --sampling j5 --omega_mult 0.763932 --seed 3 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":9712.229382826,"data":"[  9705s gpu0] run.py --model node --sampling j20 --omega_mult 0.75 --seed 3 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":9761.93161614,"data":"[  9754s gpu1] run.py --model node --sampling j20 --omega_mult 0.763932 --seed 3 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":10074.216569372,"data":"[ 10067s gpu0] run.py --model node --sampling exp --omega_mult 0.75 --seed 2 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":10170.630341029,"data":"[ 10163s gpu1] run.py --model node --sampling exp --omega_mult 0.763932 --seed 2 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":11396.987244161,"data":"[ 11389s gpu1] run.py --model node --sampling j5 --omega_mult 0.763932 --seed 4 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":11401.718418538,"data":"[ 11394s gpu0] run.py --model node --sampling j5 --omega_mult 0.75 --seed 4 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":12078.216887186,"data":"[ 12071s gpu0] run.py --model node --sampling j20 --omega_mult 0.75 --seed 4 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":12114.06328518,"data":"[ 12106s gpu1] run.py --model node --sampling j20 --omega_mult 0.763932 --seed 4 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":12199.893146276,"data":"[ 12192s gpu1] run.py --model node --sampling exp --omega_mult 0.763932 --seed 3 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":12219.946321958,"data":"[ 12212s gpu0] run.py --model node --sampling exp --omega_mult 0.75 --seed 3 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":13318.527841824,"data":"[ 13311s gpu0] run.py --model node --sampling exp --omega_mult 0.75 --seed 4 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":13363.442771718,"data":"[ 13356s gpu1] run.py --model node --sampling exp --omega_mult 0.763932 --seed 4 --out results_irr_node.jsonl OK\n"}
+,{"stream_name":"stdout","time":13363.446886515,"data":"BITTI\n"}
+,{"stream_name":"stderr","time":13366.212976124,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":13366.213057499,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":13366.534745278,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":13366.534771422,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":13367.261970371,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":13368.63786903,"data":"[NbConvertApp] Writing 355383 bytes to __results__.html\n"}
+]
