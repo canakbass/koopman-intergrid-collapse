@@ -77,13 +77,16 @@ def qp_table(out):
             (("oracle", "regular", "none"), "mean-frequency reference")]
     out.append(r"""\begin{table}[t]
 \centering
-\caption{\textbf{A quasi-periodic system: the failure survives, the repair does not}
-(medians over five seeds). The glyph's phase is $\theta_0+\omega t+A\sin(\nu t)$ with $\nu/\omega$
+\caption{\textbf{A quasi-periodic system: the failure survives and the gate carries the repair}
+(medians over five seeds). \emph{Read the absolute columns, not the ratio}: the gate-free lift is
+level with the control on $\Eoff{1/2}$ while its ratio is three times larger, because lifting
+improves $\Eoff{0}$ by a factor of $2.6$ and shrinks the denominator. The gated arm is the best
+learned arm here on every absolute measure. The glyph's phase is $\theta_0+\omega t+A\sin(\nu t)$ with $\nu/\omega$
 irrational, so the trajectory never repeats and the instantaneous angular velocity varies by
 $\pm31\%$. The spectrum is still a point spectrum, at the combination frequencies $m\omega+k\nu$
 rather than on a harmonic ladder, so a linear generator exists in principle; what the models here
-do not have is enough modes for it ($13$ carry $90\%$ of the oscillating energy, against four
-oscillators). The last row is not an oracle but a reference initialised at the mean frequency, and
+do not have is enough modes for it ($10$--$17$ carry $90\%$ of the oscillating
+energy depending on the glyph, against four oscillators). The last row is not an oracle but a reference initialised at the mean frequency, and
 it is the worst arm in the table, which is why no ``oracle level'' anchors this table.}
 \label{tab:qp}
 \footnotesize
@@ -117,8 +120,8 @@ def budget_table(out):
     out.append(r"""\begin{table}[t]
 \centering
 \caption{\textbf{Enlarging the oscillator budget does not repair the lift on the quasi-periodic
-system} (medians over five seeds). The observable needs $13$ modes for $90\%$ of its oscillating
-energy and the models of \cref{tab:qp} carry four, so capacity is a candidate explanation for the
+system} (medians over five seeds). The observable needs $10$--$17$ modes for $90\%$ of its
+oscillating energy depending on the glyph, and the models of \cref{tab:qp} carry four, so capacity is a candidate explanation for the
 failure of the repair there. It does not survive the test: the ratio falls with the budget, but only
 because $\Eoff{0}$ degrades faster than $\Eoff{1/2}$ --- both absolute errors get worse and
 $f_{\text{true}}$ falls with them. The control's absolute error is flat across the budget, so this

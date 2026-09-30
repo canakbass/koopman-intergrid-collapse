@@ -173,6 +173,26 @@ for thr, want in ((0.90, 13), (0.95, 22), (0.99, 57)):
         if acc >= thr: break
     chk(f"spektrum: %{thr*100:.0f} enerji icin mod", cnt, want, tol=0.0)
 
+# --- QP: mutlak degerler (yon-yanlis yorumun bir daha olmamasi icin)
+for w, want_c, want_l, want_g in [(0.75, 3.48e-2, 3.62e-2, 1.85e-2), (0.763932, 3.68e-2, 2.90e-2, 1.05e-2)]:
+    for key, want, nm in ((("koop", "mr", "none"), want_c, "kontrol"), (("koop", "mr", "mr"), want_l, "lift"),
+                          (("koop", "mr", "mrg"), want_g, "gate li")):
+        v = [r for r in qp if (r["model"], r["sampling"], r["dmd"]) == key and r["omega_mult"] == w]
+        chk(f"qp MUTLAK E_1/2 {nm} rho={w/2:.3f}", m([r["E_mid"] for r in v]), want, tol=0.03)
+# gate li kol kontrolden MUTLAK olarak iyi olmali (yon kontrolu)
+for w, want in [(0.75, 1.88), (0.763932, 3.53)]:
+    c = m([r["E_mid"] for r in qp if (r["model"], r["sampling"], r["dmd"]) == ("koop", "mr", "none") and r["omega_mult"] == w])
+    g = m([r["E_mid"] for r in qp if (r["model"], r["sampling"], r["dmd"]) == ("koop", "mr", "mrg") and r["omega_mult"] == w])
+    chk(f"qp gate li kontrolden kac kat iyi rho={w/2:.3f}", c / g, want, tol=0.03)
+    assert g < c, "gate li kol kontrolden kotu cikti: yon-yanlis yorum riski"
+# iki kernel ayni konfigurasyonda ne kadar ayrisiyor (tekrarlanabilirlik notu)
+_pairs = []
+for w in (0.75, 0.763932):
+    a = {r["seed"]: r["mid_over_grid"] for r in qp if (r["model"], r["sampling"], r["dmd"]) == ("koop", "mr", "mr") and r["omega_mult"] == w}
+    b = {r["seed"]: r["mid_over_grid"] for r in bud if (r["sampling"], r["dmd"]) == ("mr", "mr") and r["omega_mult"] == w and r["n"] == 4}
+    _pairs += [max(a[k], b[k]) / min(a[k], b[k]) for k in a]
+chk("iki kernel tohum basina en buyuk sapma", max(_pairs), 1.35, tol=0.03)
+
 print(f"DOGRULANAN: {len(ok)}")
 for b in bad: print("  UYUSMUYOR ->", b)
 print("SONUC:", "hepsi tutuyor" if not bad else f"{len(bad)} UYUSMAZLIK")
