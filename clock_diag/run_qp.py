@@ -6,8 +6,7 @@ mean rotation here and not the true phase. Everything else -- kappa, the inter-g
 autoencoder and chart diagnostics -- is the unmodified code that produced the other tables.
 f_alias is left in place but is meaningless here: there is no single frequency to alias.
 """
-import argparse, math, sys
-import torch
+import argparse, sys
 import data, data_qp
 
 assert "diagnostics" not in sys.modules and "run" not in sys.modules, "data_qp diagnostics'ten once takilmali"
@@ -17,18 +16,8 @@ import diagnostics, run
 from losses import LAM
 
 
-def _track(R, omega, tol_deg=15):          # gercek faz artik FM: theta_0 + omega t + A sin(nu t)
-    ang, _ = diagnostics.probe(R["xh"], R["sid"])
-    t, th0 = R["t"], R["th0"]
-    tol = tol_deg * math.pi / 180
-    mid = (torch.arange(t.shape[1], device=t.device) % int(round(1 / R["dt"]))) != 0
-    cd = lambda a, b: (a - b + math.pi) % (2 * math.pi) - math.pi
-    true = data_qp.phase(th0, omega, t)
-    return dict(f_true=(cd(ang, true).abs() < tol)[:, mid].float().mean().item(),
-                f_alias=float("nan"))     # tek bir alias frekansi yok
+diagnostics.track = data_qp.track
 
-
-diagnostics.track = _track
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()

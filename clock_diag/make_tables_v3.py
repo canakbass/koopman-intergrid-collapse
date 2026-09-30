@@ -29,7 +29,7 @@ def cell(v):
 
 def irr_table(out):
     reg = load("results_merged2.jsonl")
-    irr_k = load("kaggle_out_irr_koop/results_irr_koop.jsonl")
+    irr_k = load("kaggle_out_irr_koop2/results_irr_koop.jsonl")
     irr_n = load("kaggle_out_irr_node/results_irr_node.jsonl")
     node_reg = [r for p in ("kaggle_out_node_gen/results_node_gen_a.jsonl",
                             "kaggle_out_node_gen_b/results_node_gen_b.jsonl") for r in load(p)]
@@ -37,15 +37,14 @@ def irr_table(out):
     out.append(r"""\begin{table}[t]
 \centering
 \caption{\textbf{The failure needs a grid, and realistic jitter is not enough to dissolve one}
-(medians over five seeds; $\mathcal{E}^{\text{mid}}/\mathcal{E}^{\text{grid}}$ as in
+(medians over five seeds; $\Eoff{1/2}/\Eoff{0}$ as in
 \cref{sec:experiments}). Training times are perturbed from the grid $\{k\Delta\}$ by uniform jitter
 of $\pm0.05$ or $\pm0.20$, or replaced by exponential inter-arrival times, which removes the grid
 entirely. The diagnostics are unchanged: every arm is still evaluated at the midpoints of the same
 $\Delta$ grid. The regular rows use the small initialisation, matching the irregular runs.}
 \label{tab:irregular}
-\small
-\setlength{\tabcolsep}{4pt}
-\resizebox{\linewidth}{!}{%
+\footnotesize
+\setlength{\tabcolsep}{4.5pt}
 \begin{tabular}{llccccc}
 \toprule
 & & \multicolumn{2}{c}{Koopman} & \multicolumn{2}{c}{Neural ODE} & oracle \\
@@ -65,7 +64,7 @@ $\rho$ & training times & ratio & $f_{\text{true}}$ & ratio & $f_{\text{true}}$ 
             pre = r"\multirow{4}{*}{" + RHO[w] + "}" if i == 0 else ""
             out.append(f"{pre} & {lab} & {kr} & {kf} & {nr} & {nf} & {orr} \\\\")
         out.append(r"\midrule" if w != 2.763932 else r"\bottomrule")
-    out.append("\\end{tabular}%\n}\n\\end{table}\n")
+    out.append("\\end{tabular}\n\\end{table}\n")
 
 
 def qp_table(out):
@@ -85,12 +84,11 @@ and the spectrum is a set of Bessel sidebands rather than a harmonic ladder. The
 here: no single linear generator reproduces this motion, and the last row is a reference
 initialised at the mean frequency, not a ceiling --- it is the worst arm in the table.}
 \label{tab:qp}
-\small
-\setlength{\tabcolsep}{4pt}
-\resizebox{\linewidth}{!}{%
+\footnotesize
+\setlength{\tabcolsep}{4.5pt}
 \begin{tabular}{llcccc}
 \toprule
-$\rho$ & arm & $\mathcal{E}^{\text{mid}}/\mathcal{E}^{\text{grid}}$ & $\kappa$ & $f_{\text{true}}$ & gate \\
+$\rho$ & arm & $\Eoff{1/2}/\Eoff{0}$ & $\kappa$ & $f_{\text{true}}$ & gate \\
 \midrule""")
     for w in (0.75, 0.763932):
         for i, (key, lab) in enumerate(arms):
@@ -105,7 +103,7 @@ $\rho$ & arm & $\mathcal{E}^{\text{mid}}/\mathcal{E}^{\text{grid}}$ & $\kappa$ &
             pre = r"\multirow{5}{*}{" + RHO[w] + "}" if i == 0 else ""
             out.append(f"{pre} & {lab} & {r_} & {k_} & {f_} & {g} \\\\")
         out.append(r"\midrule" if w == 0.75 else r"\bottomrule")
-    out.append("\\end{tabular}%\n}\n\\end{table}")
+    out.append("\\end{tabular}\n\\end{table}")
 
 
 if __name__ == "__main__":

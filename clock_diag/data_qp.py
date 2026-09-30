@@ -39,3 +39,17 @@ def batch(B, K, mode, omega, g, noise=0.01):
     t = sample_times(B, K, mode, g)
     x = video(sid, th0, omega, t)
     return x + noise * torch.randn(x.shape, generator=g).to(DEV), t
+
+
+def track(R, omega, tol_deg=15):
+    """diagnostics.track'in FM karsiligi: gercek faz theta_0 + omega t + A sin(nu t).
+    Cekirdek surumu saf donme varsayiyor ve f_true'yu yanlis olcerdi. diagnostics cagri aninda
+    import ediliyor, boylece bu modul onun oncesinde yuklenebiliyor."""
+    import diagnostics
+    ang, _ = diagnostics.probe(R["xh"], R["sid"])
+    t, th0 = R["t"], R["th0"]
+    tol = tol_deg * math.pi / 180
+    mid = (torch.arange(t.shape[1], device=t.device) % int(round(1 / R["dt"]))) != 0
+    cd = lambda a, b: (a - b + math.pi) % (2 * math.pi) - math.pi
+    return dict(f_true=(cd(ang, phase(th0, omega, t)).abs() < tol)[:, mid].float().mean().item(),
+                f_alias=float("nan"))     # tek bir alias frekansi yok
