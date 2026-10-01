@@ -37,8 +37,8 @@ def node_table(out):
     out.append(r"""\begin{table}[t]
 \centering
 \caption{\textbf{The inter-grid failure in a Neural ODE} (five seeds per cell; medians, with the
-range over seeds in brackets). $\Eoff{0}$ and $\Eoff{1/2}$ are the rollout errors
-at grid times and at midpoints only, defined in \cref{sec:experiments}; they are the $\tau=0$ and $\tau=1/2$ members of
+range over seeds in brackets). All ratios in this table are ratio \emph{(ii)} of \cref{sec:setup}, internal to each model:
+$\Eoff{0}$ and $\Eoff{1/2}$ are one rollout's errors at grid times and at midpoints only; they are the $\tau=0$ and $\tau=1/2$ members of
 \cref{eq:losses}, not the half-spacing $\Ehalf$ reported elsewhere. The latent generator is a learned vector
 field integrated with RK4, not a linear Koopman operator. Training a fraction of windows at the
 second rate (\emph{mixed-rate}) reduces the ratio but does not remove it. The Koopman oracle reaches
@@ -75,8 +75,8 @@ def cyl_table(out):
     out.append(r"""\begin{table}[t]
 \centering
 \caption{\textbf{Cylinder wake at $\mathrm{Re}=100$} (five seeds per cell; medians, range over seeds
-in brackets). $\Eoff{0}$ and $\Eoff{1/2}$ are the rollout errors at grid times and
-at midpoints only, defined in \cref{sec:experiments}; they are the $\tau=0$ and $\tau=1/2$ members of \cref{eq:losses},
+in brackets). All ratios in this table are ratio \emph{(ii)} of \cref{sec:setup}, internal to each model:
+$\Eoff{0}$ and $\Eoff{1/2}$ are one rollout's errors at grid times and at midpoints only; they are the $\tau=0$ and $\tau=1/2$ members of \cref{eq:losses},
 not the half-spacing $\Ehalf$ reported elsewhere. The field is the vorticity of a lattice-Boltzmann limit
 cycle with its time-average removed, so the harmonics of the shedding frequency are physical rather
 than imposed. At both $\rho$ the second and third harmonics fold past the Nyquist rate of $\Delta_1$.
