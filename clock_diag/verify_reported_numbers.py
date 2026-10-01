@@ -200,6 +200,17 @@ for thr, want in ((0.90, 13), (0.95, 22), (0.99, 57)):
         if acc >= thr: break
     chk(f"spektrum: %{thr*100:.0f} enerji icin mod", cnt, want, tol=0.0)
 
+# --- 90-958x: tohum ve rho eslestirilmis oran (abstract'taki manset sayi)
+_mg = [json.loads(l) for l in open("results_merged.jsonl")]
+_rat = []
+for _w in (0.75, 0.763932, 2.763932):
+    _O = {r["seed"]: r["mse_half"] for r in _mg if r["model"] == "oracle" and round(r.get("omega_mult", 0), 6) == _w}
+    _rat += [r["mse_half"] / _O[r["seed"]] for r in _mg
+             if r["model"] != "oracle" and round(r.get("omega_mult", 0), 6) == _w and r["seed"] in _O]
+chk("manset oran alt sinir (tohum-esli)", min(_rat), 90, tol=0.01)
+chk("manset oran ust sinir (tohum-esli)", max(_rat), 958, tol=0.01)
+chk("manset oran kiyas sayisi", len(_rat), 54, tol=0.0)
+
 print(f"DOGRULANAN: {len(ok)}")
 for b in bad: print("  UYUSMUYOR ->", b)
 print("SONUC:", "hepsi tutuyor" if not bad else f"{len(bad)} UYUSMAZLIK")
