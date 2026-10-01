@@ -1,4 +1,4 @@
-"""Emits the two new LaTeX tables of paper_v2 straight from the raw jsonl files, so no number in
+"""Emits the two new LaTeX tables of the paper straight from the raw jsonl files, so no number in
 the paper is transcribed by hand: Neural ODE generalisation (5-A) and the cylinder wake (5-B).
 Run from clock_diag/. Writes table_node.tex and table_cyl.tex into the directory given as the
 first argument, or into the working directory if none is given.
@@ -104,7 +104,7 @@ $\Eoff{1/2}/\Eoff{0}$ & $\kappa$ & $f_{\text{true}}$ \\
 
 
 if __name__ == "__main__":
-    hdr = "% Bu dosya make_tables_v2.py tarafindan ham jsonl'den uretilir; elle duzenleme."
+    hdr = "% Bu dosya make_tables_node_cylinder.py tarafindan ham jsonl'den uretilir; elle duzenleme."
     dest = sys.argv[1] if len(sys.argv) > 1 else "."
     for fn, build in (("table_node", node_table), ("table_cyl", cyl_table)):
         out = [hdr]; build(out)

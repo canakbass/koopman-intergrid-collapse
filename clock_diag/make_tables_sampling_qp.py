@@ -152,7 +152,7 @@ def sci(x):
 
 if __name__ == "__main__":
     dest = sys.argv[1] if len(sys.argv) > 1 else "."
-    hdr = "% Bu dosya make_tables_v3.py tarafindan ham jsonl'den uretilir; elle duzenleme."
+    hdr = "% Bu dosya make_tables_sampling_qp.py tarafindan ham jsonl'den uretilir; elle duzenleme."
     for fn, build in (("table_irregular", irr_table), ("table_qp", qp_table), ("table_qp_budget", budget_table)):
         o = [hdr]; build(o)
         with open(os.path.join(dest, fn + ".tex"), "w") as f: f.write("\n".join(o) + "\n")

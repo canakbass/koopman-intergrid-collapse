@@ -1,4 +1,4 @@
-"""Asserts every number paper_v2 states about the two new experiments against the raw jsonl files.
+"""Asserts every number the paper states about the two new experiments against the raw jsonl files.
 Run from clock_diag/. Any drift between the text and the data fails loudly instead of silently.
 """
 import json, statistics as st
