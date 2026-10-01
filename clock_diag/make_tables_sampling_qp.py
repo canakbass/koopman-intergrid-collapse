@@ -84,7 +84,7 @@ $\nu/\omega=(\sqrt5-1)/2$, so the spectrum is a lattice of combination frequenci
 ratio. The three rotation numbers differ only in how often the gate finds a mode it can certify
 --- $5/5$, $3/5$ and $1/5$ runs --- and the gain tracks that exactly, since an abstention leaves the
 control in place. $\rho_g$ is the degenerate case: with $\nu/\omega=G$ and $\rho_g=G^2$ the mode
-lattice collapses from $104$ candidates to $32$ distinct aliases (\cref{app:generality}), which is
+lattice collapses from $104$ candidates to $32$ distinct aliases (\cref{app:folding}), which is
 why a certifiable mode is always available there. The last row is a reference initialised at the
 mean frequency, not an oracle, and it is the worst arm at every $\rho$.}
 \label{tab:qp}
