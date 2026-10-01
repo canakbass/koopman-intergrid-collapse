@@ -139,6 +139,13 @@ for w, gain, locks in [(0.75, 1.87, 3), (0.763932, 3.51, 5), (0.707107, 1.00, 1)
 _c = _q(0.707107, ("koop", "mr", "none"), "E_mid"); _g = _q(0.707107, ("koop", "mr", "mrg"), "E_mid")
 assert 0.9 < _c / _g < 1.2, "sqrt2/4 te gate li kol fayda saglamamali"
 
+# --- kappa/oran iddiasi (ozet cumlelerin tablodan kopmamasi icin)
+_lr = [(_q(w, ("koop", "mr", "mr")), _q(w, ("koop", "mr", "mr"), "kappa")) for w in (0.75, 0.763932, 0.707107)]
+chk("qp lift oran en kucuk", min(r for r, _ in _lr), 77.6, tol=0.03)
+chk("qp lift oran en buyuk", max(r for r, _ in _lr), 157.4, tol=0.03)
+chk("qp lift kappa en kucuk", min(k for _, k in _lr), 0.48, tol=0.05)
+chk("qp lift kappa=1.00 olan rho sayisi", sum(abs(k - 1.0) < 0.01 for _, k in _lr), 2, tol=0.0)
+
 # --- mod cakisma sayimlari (dejenerasyon iddiasinin kaynagi)
 import collections as _co
 _G = (5 ** 0.5 - 1) / 2
